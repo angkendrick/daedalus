@@ -30,3 +30,15 @@ div {
 .door {
   background-color: brown;
 }
+.outside {
+  background-color: pink;
+}
+.start {
+  background-color: gray;
+}
+
+.player {
+  background-image: url('http://mlblogsrandallg.files.wordpress.com/2012/07/stick-figure.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

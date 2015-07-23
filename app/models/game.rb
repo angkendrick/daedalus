@@ -15,7 +15,7 @@ class Game
       
       @player.update_position({x: x, y: y})
     end
-    tiles = @level.get_adjacent_tiles(x, y)
+    tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
     tiles_to_html(tiles)
   end
 
@@ -62,7 +62,10 @@ class Game
           end_str += default_div('coin')
         when 'K'
           end_str += default_div('key')
-        
+        when 'C'
+          end_str += default_div('start')
+        else
+          end_str += default_div('outside')
       end
       count += 1
       if count % 3 == 0

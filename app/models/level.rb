@@ -42,9 +42,9 @@ class Level
     rows = @level.slice(y-1, 3)
     final_array = []
     rows.each do |arr|
-      final_array << arr[x-1] 
-      final_array << arr[x] 
-      final_array << arr[x+1]
+      final_array << arr[x-1] || '#'
+      final_array << arr[x] || '#'
+      final_array << arr[x+1] || '#'
     end
     final_array
   end

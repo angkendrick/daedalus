@@ -36,12 +36,13 @@ post '/new_game' do
     @current_save.level = strlvl
     @current_save.save
   else
-    SaveState.create(player_id: @player.id, level: strlvl)
+    @current_save = SaveState.create(player_id: @player.id, level: strlvl)
   end
   
   @player.update_position(@level.find_start_position)
+  @current_save.update(player_position: @player.position.to_s) # saves player start position
   @game = Game.new(@player, @level.level)
-  @tiles = @game.tiles_to_html(@level.get_adjacent_tiles(7,3))
+  @tiles = @game.tiles_to_html(@level.get_adjacent_tiles(@player.position[:x],@player.position[:y]))
   erb :index
 end
 
@@ -54,7 +55,10 @@ post '/move' do
   puts @dir
 
   @player = Player.find(session[:id])
-  @player.update_position({x: 7, y: 3}) # TODO this is here until we save the position in saves table
+  @current_save = SaveState.find_by(player_id: @player.id)
+  @position = eval(@current_save.player_position)
+  @player.update_position(@position) # TODO this is here until we save the position in saves table
+  
   @map = Map.find_by(number: 0).level # TODO should be Saves.level_number
   @level = Level.new(@map)
   @game = Game.new(@player, @level)
@@ -68,6 +72,9 @@ post '/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
+
+  @current_save.update(player_position: @player.position.to_s, level: Level.stringify(@level.level))
+  @current_save.save
   erb :tiles, :layout => false
 end
 # post 'move' do
