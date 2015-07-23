@@ -73,7 +73,6 @@ class Game
           end_str += default_div('outside')
       end
       count += 1
-      if count == 5
 
       if count % 3 == 0
         end_str += "</div>"

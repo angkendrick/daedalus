@@ -72,7 +72,7 @@ post '/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
-
+  binding.pry
   @current_save.update(player_position: @player.position.to_s, level: Level.stringify(@level.level))
   @current_save.save
   erb :tiles, :layout => false
