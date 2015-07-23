@@ -11,15 +11,15 @@ class Game
     x = @player.position[:x] + dirx
     y = @player.position[:y] + diry
     #binding.pry
-    if self.can_i_move_here(x, y)
-      
+    if self.can_i_move_here?(x, y)
       @player.update_position({x: x, y: y})
+      @level.change_tile_to(@player.position[:x], @player.position[:y], '-')
     end
     tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
     tiles_to_html(tiles)
   end
 
-  def can_i_move_here(x, y)
+  def can_i_move_here?(x, y)
     #binding.pry
     str = @level.level[y][x] 
     case str
@@ -28,14 +28,19 @@ class Game
       when '#'
         return false
       when 'P'
+        # if @player.gems > 0
         return true
       when 'D'
+        # if @player.keys > 0
         return true
       when 'G'
+        # @player.pick_up_gem
         return true
       when 'T'
+        # @player.pick_up_coin
         return true
       when 'K'
+        # @player.pick_up_key
         return true
       when nil
         return false
@@ -68,6 +73,8 @@ class Game
           end_str += default_div('outside')
       end
       count += 1
+      if count == 5
+
       if count % 3 == 0
         end_str += "</div>"
         end_str += "<div class='tile_row'>" if count < arr.count

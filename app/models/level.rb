@@ -25,7 +25,9 @@ class Level
     new_array.join("|")
   end
 
-
+  def change_tile_to(x,y, new_tile)
+    self.level[y][x] = new_tile
+  end
 
   def find_start_position
     @level.each_index do |x|
