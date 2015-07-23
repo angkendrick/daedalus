@@ -1,0 +1,29 @@
+div {
+  width: 64px;
+  height: 64px;
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+.tile_row {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+.inline {
+  display: inline-block;
+}
+.walkable {
+  background-color: green;
+}
+.wall {
+  background-color: black;
+}
+.portal {
+  background-color: blue;
+}
+.gem {
+  background-color: red;
+}
+.coin {
+  background-color: yellow;
+}

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,11 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321144528) do
+ActiveRecord::Schema.define(version: 20150723151756) do
 
-  create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password"
+    t.integer  "times_played"
+    t.time     "total_time"
+    t.time     "last_time_stamp"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "save_states", force: :cascade do |t|
+    t.integer "player_id"
+    t.string  "level"
+    t.integer "score"
+    t.integer "keys"
+    t.integer "gems"
+    t.integer "coins"
+    t.boolean "done"
+    t.integer "steps"
+    t.string  "player_position"
   end
 
 end

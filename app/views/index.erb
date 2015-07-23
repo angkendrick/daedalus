@@ -1,1 +1,16 @@
-<h1>Home Page</h1>
+<% if session[:id] %> ! Session Active ! <%= session[:id] %> <% end %>
+
+<form method="post" action="login_signup">
+  <input type="text" name="name">
+  <input type="password" name="password">
+  <input type="submit" value="Login/Signup"> 
+</form>
+
+<% if session[:id] %>
+  <form method="post" action="new_game">
+    <input type="submit" value="New Game"> 
+  </form>
+<% end %>
+
+<%= @tiles %>
+<%= @dir %>
