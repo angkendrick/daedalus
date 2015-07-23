@@ -26,6 +26,10 @@ class Player < ActiveRecord::Base
     @coins = @coins + 1
   end
 
+  def unlock_door
+    @keys -= 1 if @keys >= 1
+  end
+
   def activate_portal
     @gems -= 1 if @gems >= 1
   end
