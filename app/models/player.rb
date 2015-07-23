@@ -2,7 +2,7 @@ class Player < ActiveRecord::Base
 
   attr_accessor :position
   @position = {x: 0, y: 0}
-
+  
   def update_position(xy = {})
     @position = xy
   end

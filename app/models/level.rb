@@ -1,8 +1,8 @@
 class Level
 
   attr_accessor :level
-  def initialize(number)
-    @level = Level.arrayify(Level.load_level(number))
+  def initialize(str)
+    @level = Level.arrayify(str)
   end
 
   def self.load_level(number)
@@ -11,8 +11,9 @@ class Level
 
   def self.arrayify(string)
     arr = []
-    string.each_line do |line|
-      arr << line.split(' ')
+    temp_arr = string.split('|')
+    temp_arr.each do |arrx|
+      arr << arrx.split(' ')
     end
     arr
   end
@@ -21,8 +22,10 @@ class Level
     new_array = arr.map do |x|
       x.join(' ')
     end 
-    new_array.join("\n")
+    new_array.join("|")
   end
+
+
 
   def find_start_position
     @level.each_index do |x|

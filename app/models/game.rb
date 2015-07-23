@@ -10,6 +10,7 @@ class Game
   def move_player(dirx, diry)
     x = @player.position[:x] + dirx
     y = @player.position[:y] + diry
+    #binding.pry
     if self.can_i_move_here(x, y)
       
       @player.update_position({x: x, y: y})
@@ -19,7 +20,8 @@ class Game
   end
 
   def can_i_move_here(x, y)
-    str = @level[y][x] 
+    #binding.pry
+    str = @level.level[y][x] 
     case str
       when '-'
         return true

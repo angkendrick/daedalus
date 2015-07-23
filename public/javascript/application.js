@@ -4,7 +4,15 @@ $(document).ready(function() {
 
   $(window).bind('keydown', event, move);
 
-  function move(event)
+  function insertTiles(message){
+    // console.log("hello", message);
+    // document.getElementsByTagName("body")[0].appendChild(message);
+    $('.tile_row').remove();
+    $('body').append(message);
+
+  }
+
+  function move(e)
   {
     var left = 37,
         right = 39,
@@ -18,18 +26,22 @@ $(document).ready(function() {
         url: "/move",
         method: "POST",
         data: "dir=" + dir,
-        dataType: "text"
+        dataType: "text",
+        success: insertTiles
       });
        
     }
-    switch (event.keyCode){
-      case left:
-        ajax('left')
-      case right:
-
-      case up:
-
-      case down:
+    if(e.keyCode == left){
+      ajax('left');
+    }else
+    if(e.keyCode == right){
+      ajax('right');
+    }else
+    if(e.keyCode == up){
+      ajax('up');
+    }else
+    if(e.keyCode == down){
+      ajax('down');
     }
 
 

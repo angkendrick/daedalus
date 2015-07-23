@@ -25,9 +25,11 @@ end
 
 post '/new_game' do
   @player = Player.find(session[:id])
-  @level = Level.new(0)
+  @map = Map.find_by(number: 0).level
+  #binding.pry
+  @level = Level.new(@map)
+  #binding.pry
   strlvl = Level.stringify(@level.level)
-
   @existing_save = SaveState.exists?(player_id: @player.id)
   if @existing_save
     @current_save = SaveState.find_by(player_id: @player.id)
@@ -52,13 +54,21 @@ post '/move' do
   puts @dir
 
   @player = Player.find(session[:id])
-  @player.update_position({x: 7, y: 3})
-  @level = Level.arrayify(SaveState.find_by(player_id: @player.id).level)
+  @player.update_position({x: 7, y: 3}) # TODO this is here until we save the position in saves table
+  @map = Map.find_by(number: 0).level # TODO should be Saves.level_number
+  @level = Level.new(@map)
   @game = Game.new(@player, @level)
+  #binding.pry
   if @dir == 'left'
     @tiles = @game.move_player(-1, 0)
+  elsif @dir == 'right'
+    @tiles = @game.move_player(1, 0)
+  elsif @dir == 'up'
+    @tiles = @game.move_player(0, -1)
+  elsif @dir == 'down'
+    @tiles = @game.move_player(0, 1)
   end
-  erb :index
+  erb :tiles, :layout => false
 end
 # post 'move' do
 
