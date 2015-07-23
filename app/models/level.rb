@@ -26,7 +26,7 @@ class Level
   end
 
   def change_tile_to(x,y, new_tile)
-    self.level[y][x] = new_tile
+    self.level[y][x] = new_tile if self.level[y][x] != 'P'
   end
 
   def find_start_position
@@ -34,6 +34,19 @@ class Level
       @level[x].each_index do |y|
         if @level[x][y] == "C"
           pos = { x: y, y: x } 
+          return pos
+        end
+      end
+    end
+  end
+
+  def find_next_portal(px, py)
+    pos = {x: px, y: py}
+    @level.each_index do |y|
+      @level[y].each_index do |x|
+        puts "#{px}, #{py}: #{x} #{y} #{@level[x][y]}"
+        if @level[y][x] == "P" && !(y == py && x == px)
+          pos = { x: x, y: y } 
           return pos
         end
       end

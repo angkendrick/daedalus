@@ -59,7 +59,7 @@ post '/move' do
   @position = eval(@current_save.player_position)
   @player.update_position(@position) # TODO this is here until we save the position in saves table
   
-  @map = Map.find_by(number: 0).level # TODO should be Saves.level_number
+  @map = SaveState.find_by(player_id: @player.id).level #Map.find_by(number: 0).level # TODO should be Saves.level_number
   @level = Level.new(@map)
   @game = Game.new(@player, @level)
   #binding.pry

@@ -13,6 +13,9 @@ class Game
     #binding.pry
     if self.can_i_move_here?(x, y)
       @player.update_position({x: x, y: y})
+      if(@level.level[y][x] == "P")
+        player.update_position(@level.find_next_portal(@player.position[:x], @player.position[:y]))
+      end
       @level.change_tile_to(@player.position[:x], @player.position[:y], '-')
     end
     tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
@@ -73,7 +76,6 @@ class Game
           end_str += default_div('outside')
       end
       count += 1
-      if count == 5
 
       if count % 3 == 0
         end_str += "</div>"
