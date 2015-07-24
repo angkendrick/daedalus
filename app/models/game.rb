@@ -15,7 +15,9 @@ class Game
       @player.update_position({x: x, y: y})
       if(@level.level[y][x] == "P")
         player.update_position(@level.find_next_portal(@player.position[:x], @player.position[:y]))
+        
       end
+      @player.add_step
       @level.change_tile_to(@player.position[:x], @player.position[:y], '-')
     end
     tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
@@ -31,19 +33,27 @@ class Game
       when '#'
         return false
       when 'P'
-        # if @player.gems > 0
-        return true
+        if @player.gems > 0
+          @player.activate_portal
+          return true
+        else
+          return false
+        end
       when 'D'
-        # if @player.keys > 0
-        return true
+        if @player.keys > 0
+          @player.unlock_door
+          return true
+        else
+          return false
+        end
       when 'G'
-        # @player.pick_up_gem
+        @player.pick_up_gem
         return true
       when 'T'
-        # @player.pick_up_coin
+        @player.pick_up_coin
         return true
       when 'K'
-        # @player.pick_up_key
+        @player.pick_up_key
         return true
       when nil
         return false

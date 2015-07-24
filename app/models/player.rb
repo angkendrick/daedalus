@@ -1,13 +1,17 @@
 class Player < ActiveRecord::Base
 
-  attr_accessor :position
-  attr_reader :keys, :gems, :coins
+  attr_accessor :position, :keys, :gems, :coins, :steps
   
   def set_variables
     @position = {x: 0, y: 0}
     @keys = 0
     @gems = 0
     @coins = 0
+    @steps = 0
+  end
+
+  def add_step
+    @steps += 1
   end
 
   def update_position(xy = {})
