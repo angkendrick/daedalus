@@ -55,12 +55,6 @@ post '/load_game' do
   @existing_save = SaveState.exists?(player_id: @player.id)
   if @existing_save
     @current_save = SaveState.find_by(player_id: @player.id)
-    @current_save.update(
-      keys: 0,
-      coins: 0,
-      gems: 0,
-      steps: 0
-    )
     @position = eval(@current_save.player_position)
     @player.update_position(@position)
     @map = @current_save.level
