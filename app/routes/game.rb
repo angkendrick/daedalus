@@ -87,6 +87,8 @@ post '/game/move' do
   end
   puts "keys: #{@player.keys} gems: #{@player.gems} coins: #{@player.coins}"
   # player stats
+  @score = @game.calculate_score
+  #binding.pry
   puts "position: #{@player.position} level: #{@player.current_level}"
   @current_save.update(
     player_position: @player.position.to_s, 
@@ -95,9 +97,11 @@ post '/game/move' do
     keys: @player.keys,
     coins: @player.coins,
     gems: @player.gems,
-    steps: @player.steps
+    steps: @player.steps,
+    score: @score
     )
   @current_save.save
+  binding.pry
   puts "position: #{@player.position} level: #{@player.current_level}"
   erb :tiles, :layout => false
 end

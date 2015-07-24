@@ -40,6 +40,7 @@ class Game
       @level.change_tile_to(@player.position[:x], @player.position[:y], '-')
     end
     puts "player position: #{@player.position}"
+    #calculate score
     tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
     tiles_to_html(tiles)
   end
@@ -131,6 +132,11 @@ class Game
     steps = "#{row_wrap_start}<div class='steps_icon inventory_icon'></div><div class='steps_amount inventory_amount'>#{@player.steps}</div>#{end_div}"
     outer_wrapper + wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div + end_div
   end
+
+    def calculate_score
+      total = 0
+      total = (((@player.current_level + 1) * 100) + (@player.coins * 10) + (@player.gems * 50) - @player.steps)
+    end
 
   private
   def default_div(class_var)
