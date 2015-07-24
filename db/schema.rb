@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723184227) do
+ActiveRecord::Schema.define(version: 20150724124548) do
 
   create_table "maps", force: :cascade do |t|
     t.string  "level"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150723184227) do
 
   create_table "save_states", force: :cascade do |t|
     t.integer "player_id"
-    t.string  "level"
+    t.string  "map"
     t.integer "score"
     t.integer "keys"
     t.integer "gems"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150723184227) do
     t.boolean "done"
     t.integer "steps"
     t.string  "player_position"
+    t.integer "current_level"
   end
 
 end

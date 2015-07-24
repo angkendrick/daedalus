@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
 
-  attr_accessor :position, :keys, :gems, :coins, :steps
+  attr_accessor :position, :keys, :gems, :coins, :steps, :current_level
   
   def set_variables
     @position = {x: 0, y: 0}
@@ -8,6 +8,7 @@ class Player < ActiveRecord::Base
     @gems = 0
     @coins = 0
     @steps = 0
+    @current_level = 0
   end
 
   def add_step

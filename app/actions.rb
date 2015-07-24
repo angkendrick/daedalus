@@ -24,10 +24,13 @@ post '/login_signup' do #login rename..
 end 
 
 post '/new_game' do
+  # the map is stored in the database as :map
+  # the level of that map is stored as :level
+  # The Level class saves the map in Level.new.level
   @player = Player.find(session[:id])
   @player.set_variables
   
-  @map = Map.find_by(number: 0).level
+  @map = Map.find_by(number: 0).map
   #binding.pry
   @level = Level.new(@map)
   #binding.pry
@@ -38,7 +41,7 @@ post '/new_game' do
     @current_save.level = strlvl
     @current_save.save
   else
-    @current_save = SaveState.create(player_id: @player.id, level: strlvl)
+    @current_save = SaveState.create(player_id: @player.id, map: strlvl, level: 0)
   end
   @current_save.update(
     keys: 0,
@@ -71,7 +74,7 @@ post '/move' do
   @player.steps = @current_save.steps || 0
   @player.update_position(@position) # TODO this is here until we save the position in saves table
   
-  @map = SaveState.find_by(player_id: @player.id).level #Map.find_by(number: 0).level # TODO should be Saves.level_number
+  @map = SaveState.find_by(player_id: @player.id).map #Map.find_by(number: 0).level # TODO should be Saves.level_number
   @level = Level.new(@map)
   @game = Game.new(@player, @level)
   #binding.pry
