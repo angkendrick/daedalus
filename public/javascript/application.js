@@ -7,7 +7,8 @@ $(document).ready(function() {
   function insertTiles(message){
     // console.log("hello", message);
     // document.getElementsByTagName("body")[0].appendChild(message);
-    $('.tile_row').remove();
+    $('.map_wrapper').remove();
+    $('.inventory_wrapper').remove();
     $('body').append(message);
     $('.tile_row')[1].children[1].className += " player"
 

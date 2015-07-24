@@ -83,39 +83,47 @@ class Game
   end
 
   def tiles_to_html(arr)
-    end_str = "<div class='tile_row'>"
+    wrapper_start = "<div class='map_wrapper'>"
+    tiles = "<div class='tile_row'>"
     count = 0;
     arr.each do |str|
       case str
         when '-'
-          end_str += default_div('walkable')
+          tiles += default_div('walkable')
         when '#'
-          end_str += default_div('wall')
+          tiles += default_div('wall')
         when 'P'
-          end_str += default_div('portal')
+          tiles += default_div('portal')
         when 'D'
-          end_str += default_div('door')
+          tiles += default_div('door')
         when 'G'
-          end_str += default_div('gem')
+          tiles += default_div('gem')
         when 'T'
-          end_str += default_div('coin')
+          tiles += default_div('coin')
         when 'K'
-          end_str += default_div('key')
+          tiles += default_div('key')
         when 'C'
-          end_str += default_div('start')
+          tiles += default_div('start')
         else
-          end_str += default_div('outside')
+          tiles += default_div('outside')
       end
       count += 1
 
       if count % 3 == 0
-        end_str += "</div>"
-        end_str += "<div class='tile_row'>" if count < arr.count
+        tiles += "</div>"
+        tiles += "<div class='tile_row'>" if count < arr.count
       end
 
     end
-    puts end_str
-    end_str
+
+    end_div = "</div>"
+    inventory_wrap_start = "<div class='inventory_wrapper'>"
+    row_wrap_start = "<div class='inventory_row'>"
+    keys = "#{row_wrap_start}<div class='keys_icon inventory_icon'></div><div class='keys_amount inventory_amount'>#{@player.keys}</div>#{end_div}"
+    gems = "#{row_wrap_start}<div class='gems_icon inventory_icon'></div><div class='gems_amount inventory_amount'>#{@player.gems}</div>#{end_div}"
+    coins = "#{row_wrap_start}<div class='coins_icon inventory_icon'></div><div class='coins_amount inventory_amount'>#{@player.coins}</div>#{end_div}"
+    steps = "#{row_wrap_start}<div class='steps_icon inventory_icon'></div><div class='steps_amount inventory_amount'>#{@player.steps}</div>#{end_div}"
+    wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div
   end
 
   private

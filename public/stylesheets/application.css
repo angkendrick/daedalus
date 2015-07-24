@@ -4,6 +4,17 @@ div {
   /*border: 1px solid black;*/
   box-sizing: border-box;
 }
+.player {
+  background-image: url('/images/player.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.map_wrapper {
+  vertical-align: top;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
 .tile_row {
   position: relative;
   display: block;
@@ -16,16 +27,20 @@ div {
   background-color: green;
 }
 .wall {
-  background-color: black;
+  background-image: url('/images/StoneWallStandard.png');
+  background-size: cover;
 }
 .portal {
-  background-color: blue;
+  background-image: url('/images/PortalComplete.gif');
+  background-size: cover;
 }
 .gem {
-  background-color: red;
+  /*background-color: red;*/
+  background-image: url('/images/Diamond.gif');
+  background-size: cover;
 }
-.coin {
-  background-color: yellow;
+.key {
+  background-color: purple;
 }
 .door {
   background-color: brown;
@@ -36,9 +51,25 @@ div {
 .start {
   background-color: gray;
 }
-
-.player {
-  background-image: url('http://mlblogsrandallg.files.wordpress.com/2012/07/stick-figure.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+.key_icon {
+  background-image: url('/images/Key.png')
 }
+.inventory_wrapper {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 260px;
+  height: 260px;
+  /*border: 1px solid black;*/
+}
+.inventory_icon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background-color: gray;
+}
+.inventory_amount {
+  display: inline-block;
+  width: 100%;
+}
+
