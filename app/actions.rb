@@ -32,8 +32,9 @@ post '/new_game' do
   
   @map = Map.find_by(number: 0).map
   #binding.pry
+  @player.set_variables 
+  @map = Map.find_by(number: 0).level
   @level = Level.new(@map)
-  #binding.pry
   strlvl = Level.stringify(@level.level)
   @existing_save = SaveState.exists?(player_id: @player.id)
   if @existing_save
@@ -57,7 +58,20 @@ post '/new_game' do
 end
 
 post '/load_game' do
-
+  @player = Player.find(session[:id])
+  @existing_save = SaveState.exists?(player_id: @player.id)
+  if @existing_save
+    @current_save = SaveState.find_by(player_id: @player.id)
+    @position = eval(@current_save.player_position)
+    @player.update_position(@position)
+    @map = @current_save.level
+    @level = Level.new(@map)
+    @game = Game.new(@player, @level.level)
+    @tiles = @game.tiles_to_html(@level.get_adjacent_tiles(@player.position[:x],@player.position[:y]))
+  else
+    #no saved game found
+  end
+  erb :index
 end
 
 post '/move' do
@@ -87,7 +101,6 @@ post '/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
-  #binding.pry
   puts "keys: #{@player.keys} gems: #{@player.gems} coins: #{@player.coins}"
   # player stats
   @current_save.update(
