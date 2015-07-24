@@ -40,6 +40,7 @@ post '/new_game' do
   if @existing_save
     @current_save = SaveState.find_by(player_id: @player.id)
     @current_save.map = strlvl
+    @current_save.current_level = 0
     @current_save.save
   else
     @current_save = SaveState.create(player_id: @player.id, map: strlvl, current_level: 0)

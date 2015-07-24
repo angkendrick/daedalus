@@ -4,11 +4,7 @@ div {
   /*border: 1px solid black;*/
   box-sizing: border-box;
 }
-.player {
-  background-image: url('/images/player.gif');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+
 .map_wrapper {
   vertical-align: top;
   display: inline-block;
@@ -22,28 +18,30 @@ div {
 }
 .inline {
   display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; 
 }
 .walkable {
   background-color: green;
+  background-image: url('/images/tiles/loseStone.png');
 }
 .wall {
   background-image: url('/images/StoneWallStandard.png');
-  background-size: cover;
 }
 .portal {
-  background-image: url('/images/PortalComplete.gif');
-  background-size: cover;
+  background-image: url('/images/PortalComplete.gif'), url('/images/tiles/loseStone.png');
 }
 .gem {
   /*background-color: red;*/
-  background-image: url('/images/Diamond.gif');
-  background-size: cover;
+  background-image: url('/images/treasures/redDiamond.png'), url('/images/tiles/loseStone.png');
 }
 .key {
-  background-color: purple;
+  background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
 }
 .door {
   background-color: brown;
+  background-image: url('/images/tiles/doorTile.png'), url('/images/tiles/loseStone.png');
 }
 .outside {
   background-color: pink;
@@ -52,7 +50,7 @@ div {
   background-color: gray;
 }
 .key_icon {
-  background-image: url('/images/Key.png')
+  background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
 }
 .inventory_wrapper {
   vertical-align: top;
@@ -73,3 +71,8 @@ div {
   width: 100%;
 }
 
+.player {
+  background-image: url('/images/player.gif'), url('/images/tiles/loseStone.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
