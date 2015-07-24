@@ -1,6 +1,7 @@
 class Level
 
   attr_accessor :level
+
   def initialize(str)
     @level = Level.arrayify(str)
   end
@@ -30,10 +31,10 @@ class Level
   end
 
   def find_start_position
-    @level.each_index do |x|
-      @level[x].each_index do |y|
-        if @level[x][y] == "C"
-          pos = { x: y, y: x } 
+    @level.each_index do |y|
+      @level[y].each_index do |x|
+        if @level[y][x] == "C"
+          pos = { x: x, y: y } 
           return pos
         end
       end
@@ -55,11 +56,12 @@ class Level
 
   def get_adjacent_tiles(x, y)
     rows = @level.slice(y-1, 3)
+    puts "row count: #{rows.count}"
     final_array = []
     rows.each do |arr|
-      final_array << arr[x-1] || '#'
-      final_array << arr[x] || '#'
-      final_array << arr[x+1] || '#'
+      final_array << arr[x-1]
+      final_array << arr[x]
+      final_array << arr[x+1]
     end
     final_array
   end

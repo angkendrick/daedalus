@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   validates :name, uniqueness: true
   has_secure_password
 
-  attr_accessor :position, :keys, :gems, :coins, :steps, :curent_level
+  attr_accessor :position, :keys, :gems, :coins, :steps, :current_level
   
   def password
     @password ||= Password.new(password_digest)
@@ -22,13 +22,17 @@ class Player < ActiveRecord::Base
     @gems = 0
     @coins = 0
     @steps = 0
-    @curent_level = 0
+    @current_level = 0
   end
 
   def next_level
-    @curent_level += 1
+    @current_level += 1
   end
 
+  def next_level
+    @current_level += 1
+  end
+  
   def add_step
     @steps += 1
   end

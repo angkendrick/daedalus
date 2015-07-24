@@ -4,6 +4,13 @@ div {
   /*border: 1px solid black;*/
   box-sizing: border-box;
 }
+
+.map_wrapper {
+  vertical-align: top;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
 .tile_row {
   position: relative;
   display: block;
@@ -11,24 +18,34 @@ div {
 }
 .inline {
   display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; 
 }
 .walkable {
   background-color: green;
+  background-image: url('/images/tiles/loseStone.png');
 }
 .wall {
-  background-color: black;
+  background-image: url('/images/StoneWallStandard.png');
 }
 .portal {
-  background-color: blue;
+  background-image: url('/images/PortalComplete.gif'), url('/images/tiles/loseStone.png');
 }
 .gem {
-  background-color: red;
+  /*background-color: red;*/
+  background-image: url('/images/treasures/redDiamond.png'), url('/images/tiles/loseStone.png');
 }
-.coin {
-  background-color: yellow;
+.key {
+  background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
 }
 .door {
   background-color: brown;
+  background-image: url('/images/tiles/doorTile.png'), url('/images/tiles/loseStone.png');
+}
+.coin {
+  background-color: brown;
+  background-image: url('/images/Chest.gif'), url('/images/tiles/loseStone.png');
 }
 .outside {
   background-color: pink;
@@ -36,9 +53,35 @@ div {
 .start {
   background-color: gray;
 }
+.key_icon {
+  background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
+}
+.inventory_wrapper {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 260px;
+  height: 260px;
+  /*border: 1px solid black;*/
+}
+.inventory_row {
+  display: table-row;
+  height: 64px;
+  margin: 0;
+}
+.inventory_icon {
+  display: table-cell;
+  width: 64px;
+  height: 64px;
+  background-color: gray;
+}
+.inventory_amount {
+  display: table-cell;
+  width: 100%;
+}
 
 .player {
-  background-image: url('http://mlblogsrandallg.files.wordpress.com/2012/07/stick-figure.png');
+  background-image: url('/images/player.gif'), url('/images/tiles/loseStone.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
