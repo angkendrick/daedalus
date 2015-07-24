@@ -1,13 +1,32 @@
 class Player < ActiveRecord::Base
-
-  attr_accessor :position, :keys, :gems, :coins, :steps
   
+  include BCrypt
+
+  validates :name, uniqueness: true
+  has_secure_password
+
+  attr_accessor :position, :keys, :gems, :coins, :steps, :curent_level
+  
+  def password
+    @password ||= Password.new(password_digest)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_digest = @password
+  end
+
   def set_variables
     @position = {x: 0, y: 0}
     @keys = 0
     @gems = 0
     @coins = 0
     @steps = 0
+    @curent_level = 0
+  end
+
+  def next_level
+    @curent_level += 1
   end
 
   def add_step
@@ -37,6 +56,5 @@ class Player < ActiveRecord::Base
   def activate_portal
     @gems -= 1 if @gems >= 1
   end
-
 
 end

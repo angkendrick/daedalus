@@ -1,0 +1,17 @@
+<h1>Sign-up</h1>
+
+<% if @player && @player.errors.any? %>
+    <strong>Some issues with your message, please fix them:</strong>
+    <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<form method="post" action="signup">
+  username: <input type="text" name="name" placeholder="username here"><br/>
+  password: <input type="password" name="password" placeholder="password here"><br/>
+  password: <input type="password" name="password2" placeholder="retype password"><br/>
+  <input type="submit" value="submit">
+</form>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723184227) do
+ActiveRecord::Schema.define(version: 20150724194620) do
 
   create_table "maps", force: :cascade do |t|
     t.string  "level"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20150723184227) do
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
-    t.string   "password"
     t.integer  "times_played"
     t.time     "total_time"
     t.time     "last_time_stamp"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   create_table "save_states", force: :cascade do |t|

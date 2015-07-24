@@ -1,16 +1,5 @@
-<% if session[:id] %> ! Session Active ! <%= session[:id] %> <% end %>
+<a href="/signup">Signup</a><br>
+<a href="/login">Login</a>
 
-<form method="post" action="login_signup">
-  <input type="text" name="name">
-  <input type="password" name="password">
-  <input type="submit" value="Login/Signup"> 
-</form>
 
-<% if session[:id] %>
-  <form method="post" action="new_game">
-    <input type="submit" value="New Game"> 
-  </form>
-  <form method="post" action="load_game">
-    <input type="submit" value="Load Game">
-  </form>
-<% end %>
+

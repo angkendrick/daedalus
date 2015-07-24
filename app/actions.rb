@@ -1,3 +1,6 @@
+#require 'routes/game'
+#require 'routes/player' 
+
 # Homepage (Root path)
 get '/' do
   erb :index
@@ -108,6 +111,7 @@ post '/move' do
 
   erb :tiles, :layout => false
 end
+
 # post 'move' do
 
 # end
