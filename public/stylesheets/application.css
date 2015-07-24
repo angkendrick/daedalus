@@ -53,6 +53,10 @@ div {
 .start {
   background-color: gray;
 }
+.exit {
+  ackground-color: brown;
+  background-image: url('/images/EvilKnight_Portal.gif'), url('/images/tiles/loseStone.png');
+}
 .key_icon {
   background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
 }

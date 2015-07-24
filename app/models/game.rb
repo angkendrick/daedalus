@@ -104,6 +104,8 @@ class Game
           tiles += default_div('key')
         when 'C'
           tiles += default_div('start')
+        when 'E'
+          tiles += default_div('exit')
         else
           tiles += default_div('outside')
       end
