@@ -1,11 +1,10 @@
-<h1>Game Index.erb</h1>
-<%if session[:id] %> ! Session Active <%= session[:id] %>!<% end %>
-
-<form method="post" action="/game/new">
-  <input type="submit" value="New Game">
-</form>
-<form method="post" action="/game/load">
-  <input type="submit" value="Load Game">
-</form>
+<div id="menu_wrapper">
+  <form method="post" action="/game/new">
+    <input class="button"  type="submit" value="New Game">
+  </form>
+  <form method="post" action="/game/load">
+    <input class="button"  type="submit" value="Load Game">
+  </form>
+</div>
 <%= @tiles %> 
 

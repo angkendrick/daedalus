@@ -19,15 +19,17 @@ class Game
         
       elsif(@level.level[y][x] == "E")
         @player.next_level
-        map = Map.find_by(number: @player.current_level).level
+        map = Map.find_by(number: @player.current_level)
         if map
           # load new level to the saves table
-          self.level = Level.new(map)
+          self.level = Level.new(map.level)
           # find start position
           pos = self.level.find_start_position
           puts "new level position: #{pos}"
           # move player to start position
           @player.update_position(pos)
+        else
+          return finish_maze
         end
       else
         @player.update_position({x: x, y: y})
@@ -83,6 +85,7 @@ class Game
   end
 
   def tiles_to_html(arr)
+    outer_wrapper = "<div class='outer_game_wrapper'>"
     wrapper_start = "<div class='map_wrapper'>"
     tiles = "<div class='tile_row'>"
     count = 0;
@@ -125,12 +128,16 @@ class Game
     gems = "#{row_wrap_start}<div class='gems_icon inventory_icon'></div><div class='gems_amount inventory_amount'>#{@player.gems}</div>#{end_div}"
     coins = "#{row_wrap_start}<div class='coins_icon inventory_icon'></div><div class='coins_amount inventory_amount'>#{@player.coins}</div>#{end_div}"
     steps = "#{row_wrap_start}<div class='steps_icon inventory_icon'></div><div class='steps_amount inventory_amount'>#{@player.steps}</div>#{end_div}"
-    wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div
+    outer_wrapper + wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div + end_div
   end
 
   private
   def default_div(class_var)
     "<div class='#{class_var} inline'></div>"
+  end
+
+  def finish_maze
+    "<div id='end_screen'>You have crawled out of Daedalus Maze into freedom. Your final score is calculate_score</div>"
   end
 
 end
