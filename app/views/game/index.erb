@@ -1,2 +1,11 @@
 <h1>Game Index.erb</h1>
 <%if session[:id] %> ! Session Active <%= session[:id] %>!<% end %>
+
+<form method="post" action="game/new_game">
+  <input type="submit" value="New Game">
+</form>
+<form method="post" action="game/load_game">
+  <input type="submit" value="Load Game">
+</form>
+<%= @tiles %> 
+
