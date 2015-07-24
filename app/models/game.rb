@@ -5,6 +5,7 @@ class Game
   def initialize(player, level)
     @player = player
     @level = level
+    @finished = false
   end
 
   def move_player(dirx, diry)
@@ -137,6 +138,7 @@ class Game
   end
 
   def finish_maze
+    self.finished = true
     "<div id='end_screen'>You have crawled out of Daedalus Maze into freedom. Your final score is calculate_score</div>"
   end
 
