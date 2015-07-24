@@ -12,14 +12,31 @@ class Game
     y = @player.position[:y] + diry
     #binding.pry
     if self.can_i_move_here?(x, y)
-      @player.update_position({x: x, y: y})
+
       if(@level.level[y][x] == "P")
-        player.update_position(@level.find_next_portal(@player.position[:x], @player.position[:y]))
+        @player.update_position(@player.update_position({x: x, y: y}))
+        @player.update_position(@level.find_next_portal(@player.position[:x], @player.position[:y]))
         
+      elsif(@level.level[y][x] == "E")
+        @player.next_level
+        map = Map.find_by(number: @player.current_level).level
+        if map
+          # load new level to the saves table
+          self.level = Level.new(map)
+          # find start position
+          pos = self.level.find_start_position
+          puts "new level position: #{pos}"
+          # move player to start position
+          @player.update_position(pos)
+        end
+      else
+        @player.update_position({x: x, y: y})
       end
+    
       @player.add_step
       @level.change_tile_to(@player.position[:x], @player.position[:y], '-')
     end
+    puts "player position: #{@player.position}"
     tiles = @level.get_adjacent_tiles(@player.position[:x], @player.position[:y])
     tiles_to_html(tiles)
   end
@@ -55,13 +72,17 @@ class Game
       when 'K'
         @player.pick_up_key
         return true
+      when 'E'
+        # check if there is a new level
+        
+      
+        true
       when nil
         return false
     end 
   end
 
   def tiles_to_html(arr)
-    html_arr = []
     end_str = "<div class='tile_row'>"
     count = 0;
     arr.each do |str|
