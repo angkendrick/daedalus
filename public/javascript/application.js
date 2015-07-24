@@ -25,7 +25,7 @@ $(document).ready(function() {
     {
       console.log(dir);
       var request = $.ajax({
-        url: "/move",
+        url: "/game/move",
         method: "POST",
         data: "dir=" + dir,
         dataType: "text",

@@ -26,9 +26,6 @@ get '/login' do
   erb :'player/login'
 end
 
-get '/game/' do
-  erb :'game/index'
-end
 
 post '/signup' do
   if two_words_match?(params[:password], params[:password2])
