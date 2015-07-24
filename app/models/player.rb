@@ -14,6 +14,7 @@ class Player < ActiveRecord::Base
   def next_level
     @current_level += 1
   end
+  
   def add_step
     @steps += 1
   end

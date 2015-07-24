@@ -43,6 +43,10 @@ div {
   background-color: brown;
   background-image: url('/images/tiles/doorTile.png'), url('/images/tiles/loseStone.png');
 }
+.coin {
+  background-color: brown;
+  background-image: url('/images/Chest.gif'), url('/images/tiles/loseStone.png');
+}
 .outside {
   background-color: pink;
 }
@@ -60,14 +64,19 @@ div {
   height: 260px;
   /*border: 1px solid black;*/
 }
+.inventory_row {
+  display: table-row;
+  height: 64px;
+  margin: 0;
+}
 .inventory_icon {
-  display: inline-block;
+  display: table-cell;
   width: 64px;
   height: 64px;
   background-color: gray;
 }
 .inventory_amount {
-  display: inline-block;
+  display: table-cell;
   width: 100%;
 }
 
