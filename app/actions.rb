@@ -26,7 +26,7 @@ post '/login_signup' do #login rename..
   erb :index
 end 
 
-post '/new_game' do
+post '/game/new_game' do
   # the map is stored in the database as :map
   # the level of that map is stored as :level
   # The Level class saves the map in Level.new.level
@@ -61,7 +61,7 @@ post '/new_game' do
   erb :index
 end
 
-post '/load_game' do
+post '/game/load_game' do
   @player = Player.find(session[:id])
   @existing_save = SaveState.exists?(player_id: @player.id)
   if @existing_save
