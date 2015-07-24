@@ -94,7 +94,6 @@ post '/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
-  #binding.pry
   puts "keys: #{@player.keys} gems: #{@player.gems} coins: #{@player.coins}"
   # player stats
   @current_save.update(
