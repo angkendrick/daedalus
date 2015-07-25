@@ -142,8 +142,11 @@ class Game
 
   private
   def default_div(class_var, x_offset, y_offset)
-    message = Message.get_message_at({ x: @player.position[:x] + x_offset - 1, y: @player.position[:y] + y_offset - 1}, @player.current_level)
-    "<div class='#{class_var} #{'message' if message} inline'></div>"
+    x = @player.position[:x] + x_offset - 1
+    y = @player.position[:y] + y_offset - 1
+    message = Message.get_message_at({ x: x, y: y }, @player.current_level)
+    other_player = SaveState.exists?(player_position: {x: x, y: y}.to_s, current_level: @player.current_level)
+    "<div class='#{class_var} #{'message' if message} #{'player' if other_player} inline'></div>"
   end
 
   def finish_maze
