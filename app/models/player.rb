@@ -2,7 +2,8 @@ class Player < ActiveRecord::Base
   
   include BCrypt
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true
+  validates :password, presence: true
   has_secure_password
 
   attr_accessor :position, :keys, :gems, :coins, :steps, :current_level
