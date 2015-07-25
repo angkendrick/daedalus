@@ -5,7 +5,9 @@
   <form method="post" action="/game/load">
     <input class="button center"  type="submit" value="Load Game">
   </form>
-  <a href="/game/highscore" class="button">High Score</a>
+  <form method="get" action="/game/highscore">
+    <input class="button center"  type="submit" value="Highscore">
+  </form>
 </div>
 <%= @tiles %> 
 

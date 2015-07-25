@@ -18,7 +18,7 @@ post '/game/new' do
   @player = Player.find(session[:id])
   @player.set_variables
   
-  @map = Map.find_by(number: 0).level
+  @map = Map.find_by(number: 3).level
   #binding.pry
   @player.set_variables 
   @level = Level.new(@map)
@@ -28,7 +28,7 @@ post '/game/new' do
   if @existing_save
     @current_save = SaveState.find_by(player_id: @player.id)
     @current_save.map = strlvl
-    @current_save.current_level = 0
+    @current_save.current_level = 3
     @current_save.save
   else
     @current_save = SaveState.create(player_id: @player.id, map: strlvl, current_level: 0)
@@ -96,7 +96,7 @@ post '/game/move' do
   @score = @game.calculate_score
   #binding.pry
   puts "position: #{@player.position} level: #{@player.current_level}"
-  @score = [@score, @current_save.score].max #always get the highest score
+  @score = [@score || 0, @current_save.score || 0].max #always get the highest score
   @current_save.update(
     player_position: @player.position.to_s, 
     map: Level.stringify(@game.level.level),
