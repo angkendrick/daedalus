@@ -119,13 +119,25 @@ post '/game/move' do
 end
 
 post '/game/leave_message' do
+  #binding.pry
   @player = Player.find(session[:id])
-  @position = @player.position
+  @current_save = SaveState.find_by(player_id: session[:id])
+  @position = @current_save.player_position
   @message = params[:message]
   # find if there is a message at this position
   # and from this player already.
-  if !Message.exists?(player_id: @player.id, position: @player.position)
-    Message.create(player_id: @player.id, position: @player.position, level_number: @player.current_level, content: @message)
+  #binding.pry
+  if !Message.exists?(player_id: @player.id, level_number: @current_save.current_level) #does not exist
+    Message.create(player_id: @player.id, position: @position, level_number: @current_save.current_level, content: @message)
+  else # 
+    @message_save = Message.find_by(player_id: @player.id, level_number: @current_save.current_level) #update message
+    #binding.pry
+    @message_save.update(
+      position: @position,
+      level_number: @current_save.current_level,
+      content: @message
+    )
+    @message_save.save!
   end
 
   puts "message from player: #{@message}"
