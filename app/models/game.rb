@@ -90,33 +90,35 @@ class Game
     outer_wrapper = "<div class='outer_game_wrapper'>"
     wrapper_start = "<div class='map_wrapper'>"
     tiles = "<div class='tile_row'>"
-    count = 0;
+    count = 0
+    count_y = 0
     arr.each do |str|
       case str
         when '-'
-          tiles += default_div('walkable')
+          tiles += default_div('walkable', count % 3, count_y )
         when '#'
-          tiles += default_div('wall')
+          tiles += default_div('wall', count % 3, count_y )
         when 'P'
-          tiles += default_div('portal')
+          tiles += default_div('portal', count % 3, count_y )
         when 'D'
-          tiles += default_div('door')
+          tiles += default_div('door', count % 3, count_y )
         when 'G'
-          tiles += default_div('gem')
+          tiles += default_div('gem', count % 3, count_y )
         when 'T'
-          tiles += default_div('coin')
+          tiles += default_div('coin', count % 3, count_y )
         when 'K'
-          tiles += default_div('key')
+          tiles += default_div('key', count % 3, count_y )
         when 'C'
-          tiles += default_div('player')
+          tiles += default_div('player', count % 3, count_y )
         when 'E'
-          tiles += default_div('exit')
+          tiles += default_div('exit', count % 3, count_y )
         else
-          tiles += default_div('outside')
+          tiles += default_div('outside', count % 3, count_y )
       end
       count += 1
 
       if count % 3 == 0
+        count_y += 1
         tiles += "</div>"
         tiles += "<div class='tile_row'>" if count < arr.count
       end
@@ -139,8 +141,8 @@ class Game
   end
 
   private
-  def default_div(class_var)
-    message = Message.get_message_at(@player.position, @player.current_level)
+  def default_div(class_var, x_offset, y_offset)
+    message = Message.get_message_at({ x: @player.position[:x] + x_offset - 1, y: @player.position[:y] + y_offset - 1}, @player.current_level)
     "<div class='#{class_var} #{'message' if message} inline'></div>"
   end
 

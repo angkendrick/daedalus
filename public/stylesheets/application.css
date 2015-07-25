@@ -67,7 +67,7 @@ body {
 }
 .message {
   background-color: green;
-  background-image: url('images/Sign.png'), url('/images/tiles/loseStone.png');
+  background-image: url('/images/Sign.png'), url('/images/tiles/loseStone.png');
 }
 .outer_game_wrapper {
   width:100%;
