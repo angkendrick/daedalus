@@ -11,6 +11,11 @@ get '/game/highscore' do
   erb :'game/highscore'
 end
 
+get '/game/logout' do
+  session[:id] = nil
+  redirect :'/'
+end
+
 post '/game/new' do
   # the map is stored in the database as :map
   # the level of that map is stored as :level
