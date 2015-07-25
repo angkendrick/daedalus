@@ -83,35 +83,31 @@ body {
   width: 200px;
 }
 .inventory_wrapper {
-  width: 120px;
-  height: 200px;
+  width: 196px;
+  height: 48px;
   margin: auto;
+  color: rgb(192,192,192);
   /*border: 1px solid black;*/
 }
 .inventory_row {
-  display: table-row;
-  height: 48px;
-  width: 128px;
+  display: inline-block;
+  height: 20px;
+  width: 40px;
   margin: 0;
 }
 .inventory_icon {
-  display: table-cell;
-  width: 64px;
-  height: 48px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
 .inventory_amount {
-  display: table-cell;
-  width: 100%;
-  height: 48px;
-  float: left;
-  font-size: 48px;
-  font-family: 'Lobster', cursive;
-  line-height: 50px;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgba(255,255,255,0.5);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
 
 }
 .keys_icon {
@@ -236,4 +232,15 @@ input[type='submit'] {
   color: rgb(192,192,192);
   border-bottom: 2px dotted rgb(192,192,192);
   height: 24px;
+}
+
+#message_list {
+  position: fixed;
+  top: 50%;
+  left: 0;
+}
+.message_item {
+  font-size: 14px;
+  font-family: Verdana;
+  color: white;
 }

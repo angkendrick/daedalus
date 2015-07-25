@@ -92,6 +92,17 @@ post '/game/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
+  # find messages
+  @messages = Message.find_by(position: @player.position.to_s, level_number: @player.current_level)
+  if @messages
+    @tiles += "<div id='message_list'>"
+    @messages = Message.where(position: @player.position.to_s, level_number: @player.current_level)
+    @messages.each do |m|
+      name = Player.find(m.player_id).name
+      @tiles += "<div class='message_item'>#{name}: #{m.content}</div>"
+    end
+    @tiles += "</div>"
+  end
   # @tiles = ""
   # player stats
   @score = @game.calculate_score
