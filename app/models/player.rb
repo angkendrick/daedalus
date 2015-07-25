@@ -7,6 +7,7 @@ class Player < ActiveRecord::Base
 
   attr_accessor :position, :keys, :gems, :coins, :steps, :current_level
   
+
   def password
     @password ||= Password.new(password_digest)
   end
@@ -60,5 +61,6 @@ class Player < ActiveRecord::Base
   def activate_portal
     @gems -= 1 if @gems >= 1
   end
+
 
 end
