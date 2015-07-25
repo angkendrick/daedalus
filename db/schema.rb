@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725190415) do
+ActiveRecord::Schema.define(version: 20150725225534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,16 +49,18 @@ ActiveRecord::Schema.define(version: 20150725190415) do
   end
 
   create_table "save_states", force: :cascade do |t|
-    t.integer "player_id"
-    t.string  "map"
-    t.integer "score"
-    t.integer "keys"
-    t.integer "gems"
-    t.integer "coins"
-    t.boolean "done"
-    t.integer "steps"
-    t.string  "player_position"
-    t.integer "current_level"
+    t.integer  "player_id"
+    t.string   "map"
+    t.integer  "score"
+    t.integer  "keys"
+    t.integer  "gems"
+    t.integer  "coins"
+    t.boolean  "done"
+    t.integer  "steps"
+    t.string   "player_position"
+    t.integer  "current_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
