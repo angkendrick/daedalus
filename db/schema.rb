@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725002339) do
+ActiveRecord::Schema.define(version: 20150725190415) do
 
   create_table "highscores", force: :cascade do |t|
     t.integer  "player_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20150725002339) do
   create_table "maps", force: :cascade do |t|
     t.string  "level"
     t.integer "number"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "position"
+    t.integer  "level_number"
+    t.string   "content"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "players", force: :cascade do |t|

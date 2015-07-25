@@ -122,6 +122,12 @@ post '/game/leave_message' do
   @player = Player.find(session[:id])
   @position = @player.position
   @message = params[:message]
+  # find if there is a message at this position
+  # and from this player already.
+  if !Message.exists?(player_id: @player.id, position: @player.position)
+    Message.create(player_id: @player.id, position: @player.position, level_number: @player.current_level, content: @message)
+  end
+
   puts "message from player: #{@message}"
 end
 

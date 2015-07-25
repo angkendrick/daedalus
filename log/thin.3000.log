@@ -1,0 +1,872 @@
+Writing PID to tmp/pids/thin.3000.pid
+Using rack adapter
+Thin web server (v1.6.3 codename Protein Powder)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+D, [2015-07-25T19:16:00.494617 #23223] DEBUG -- :   [1m[36mPlayer Load (2.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:16:00.505975 #23223] DEBUG -- :   [1m[35mMap Load (1.6ms)[0m  SELECT  "maps".* FROM "maps" WHERE "maps"."number" = ? LIMIT 1  [["number", 0]]
+# # # # # # # # # # # #|# # E # # # # # # # # #|# # - # # # # - - - # #|# # - - - - # - # G P #|# # # # # - # - - # # #|# # # - # - D # - T # #|# # # # # # - # # - # #|# # - - - - - # - - # #|# K - # # # - # - # # #|# # # - - - - - - # T #|# # # - # # # # # # T #|# # # C # P T T G T T #|# # # # # # # # # # # #D, [2015-07-25T19:16:00.527959 #23223] DEBUG -- :   [1m[36mSaveState Exists (2.3ms)[0m  [1mSELECT  1 AS one FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:16:00.530470 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:16:00.538854 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:16:00.540229 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:16:00.540495 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:16:00.541069 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:16:00.541344 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:16:00.541778 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+row count: 3
+10.0.2.2 - - [25/Jul/2015:19:16:00 +0000] "POST /game/new HTTP/1.1" 200 2381 0.1435
+10.0.2.2 - - [25/Jul/2015:19:16:00 +0000] "GET /stylesheets/application.css HTTP/1.1" 304 - 0.0029
+10.0.2.2 - - [25/Jul/2015:19:16:00 +0000] "GET /javascript/application.js HTTP/1.1" 304 - 0.0022
+up
+D, [2015-07-25T19:16:02.968971 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:16:02.970492 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:16:02.971939 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>3, :y=>10}
+row count: 3
+D, [2015-07-25T19:16:02.972759 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:16:02.977709 #23223] DEBUG -- :   [1m[36mSQL (3.3ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>3, :y=>10}"], ["steps", 1], ["id", 11]]
+D, [2015-07-25T19:16:02.979942 #23223] DEBUG -- :   [1m[35m (1.9ms)[0m  commit transaction
+D, [2015-07-25T19:16:02.980231 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:16:02.980691 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.013980581
+10.0.2.2 - - [25/Jul/2015:19:16:02 +0000] "POST /game/move HTTP/1.1" 200 952 0.0219
+up
+D, [2015-07-25T19:16:03.534532 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:16:03.536411 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:16:03.537978 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>3, :y=>9}
+row count: 3
+D, [2015-07-25T19:16:03.538724 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:16:03.542004 #23223] DEBUG -- :   [1m[36mSQL (2.1ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>3, :y=>9}"], ["steps", 2], ["id", 11]]
+D, [2015-07-25T19:16:03.544343 #23223] DEBUG -- :   [1m[35m (2.0ms)[0m  commit transaction
+D, [2015-07-25T19:16:03.544607 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:16:03.545028 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012672959
+10.0.2.2 - - [25/Jul/2015:19:16:03 +0000] "POST /game/move HTTP/1.1" 200 955 0.0210
+D, [2015-07-25T19:16:17.896812 #23223] DEBUG -- :   [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+2015-07-25 19:16:17 - NameError - uninitialized constant Message:
+	/vagrant/midterm/daedalus/app/routes/game.rb:127:in `block in <top (required)>'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `block in compile!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `[]'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (3 levels) in route!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:993:in `route_eval'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (2 levels) in route!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1014:in `block in process_route'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `catch'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `process_route'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:972:in `block in route!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `each'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `route!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1084:in `block in dispatch!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1081:in `dispatch!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `block in call!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `call!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:894:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:218:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:211:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/show_exceptions.rb:21:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:181:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:2021:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `block in call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1795:in `synchronize'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `call'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/controllers/controller.rb:87:in `start'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/runner.rb:200:in `run_command'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/lib/thin/runner.rb:156:in `run!'
+	/usr/local/rvm/gems/ruby-2.1.3/gems/thin-1.6.3/bin/thin:6:in `<top (required)>'
+	/usr/local/rvm/gems/ruby-2.1.3/bin/thin:23:in `load'
+	/usr/local/rvm/gems/ruby-2.1.3/bin/thin:23:in `<main>'
+	/usr/local/rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `eval'
+	/usr/local/rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `<main>'
+right
+D, [2015-07-25T19:20:15.398739 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:15.400495 #23223] DEBUG -- :   [1m[36mSaveState Load (1.3ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:15.402113 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>4, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:15.402883 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:15.406503 #23223] DEBUG -- :   [1m[35mSQL (2.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>4, :y=>9}"], ["steps", 3], ["id", 11]]
+D, [2015-07-25T19:20:15.408913 #23223] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:15.409141 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:15.409554 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012698601
+10.0.2.2 - - [25/Jul/2015:19:20:15 +0000] "POST /game/move HTTP/1.1" 200 955 0.0203
+right
+D, [2015-07-25T19:20:15.797654 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:15.799255 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:15.800615 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>5, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:15.801375 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:15.805848 #23223] DEBUG -- :   [1m[35mSQL (3.3ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>5, :y=>9}"], ["steps", 4], ["id", 11]]
+D, [2015-07-25T19:20:15.808126 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:15.808413 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:15.808883 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013400265
+10.0.2.2 - - [25/Jul/2015:19:20:15 +0000] "POST /game/move HTTP/1.1" 200 955 0.0214
+left
+D, [2015-07-25T19:20:16.173758 #23223] DEBUG -- :   [1m[35mPlayer Load (1.6ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:16.175636 #23223] DEBUG -- :   [1m[36mSaveState Load (1.4ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:16.177038 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>4, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:16.177828 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:16.186550 #23223] DEBUG -- :   [1m[35mSQL (2.4ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>4, :y=>9}"], ["steps", 5], ["id", 11]]
+D, [2015-07-25T19:20:16.189877 #23223] DEBUG -- :   [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:16.190183 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:16.190646 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.019175551
+10.0.2.2 - - [25/Jul/2015:19:20:16 +0000] "POST /game/move HTTP/1.1" 200 955 0.0276
+left
+D, [2015-07-25T19:20:16.350279 #23223] DEBUG -- :   [1m[35mPlayer Load (1.7ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:16.352888 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:16.357894 #23223] DEBUG -- :   [1m[35mSaveState Load (3.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:16.359486 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:16.363907 #23223] DEBUG -- :   [1m[35mSQL (3.1ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>9}"], ["steps", 6], ["id", 11]]
+D, [2015-07-25T19:20:16.366656 #23223] DEBUG -- :   [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:16.366939 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:16.367406 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.019576373
+10.0.2.2 - - [25/Jul/2015:19:20:16 +0000] "POST /game/move HTTP/1.1" 200 955 0.0281
+down
+D, [2015-07-25T19:20:16.805128 #23223] DEBUG -- :   [1m[35mPlayer Load (1.3ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:16.806737 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:16.808009 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>10}
+row count: 3
+D, [2015-07-25T19:20:16.808827 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:16.812538 #23223] DEBUG -- :   [1m[35mSQL (2.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>10}"], ["steps", 7], ["id", 11]]
+D, [2015-07-25T19:20:16.814992 #23223] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:16.815217 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:16.815610 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012240599
+10.0.2.2 - - [25/Jul/2015:19:20:16 +0000] "POST /game/move HTTP/1.1" 200 952 0.0211
+up
+D, [2015-07-25T19:20:17.112100 #23223] DEBUG -- :   [1m[35mPlayer Load (1.9ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:17.114209 #23223] DEBUG -- :   [1m[36mSaveState Load (1.7ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:17.116367 #23223] DEBUG -- :   [1m[35mSaveState Load (1.8ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:17.117233 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:17.121903 #23223] DEBUG -- :   [1m[35mSQL (3.5ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>9}"], ["steps", 8], ["id", 11]]
+D, [2015-07-25T19:20:17.126142 #23223] DEBUG -- :   [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:17.126451 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:17.126937 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.01736367
+10.0.2.2 - - [25/Jul/2015:19:20:17 +0000] "POST /game/move HTTP/1.1" 200 955 0.0267
+right
+D, [2015-07-25T19:20:17.518728 #23223] DEBUG -- :   [1m[35mPlayer Load (1.6ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:17.520561 #23223] DEBUG -- :   [1m[36mSaveState Load (1.4ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:17.521930 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>4, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:17.522714 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:17.526447 #23223] DEBUG -- :   [1m[35mSQL (2.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>4, :y=>9}"], ["steps", 9], ["id", 11]]
+D, [2015-07-25T19:20:17.528587 #23223] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:17.528891 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:17.529327 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012878216
+10.0.2.2 - - [25/Jul/2015:19:20:17 +0000] "POST /game/move HTTP/1.1" 200 955 0.0238
+right
+D, [2015-07-25T19:20:17.756058 #23223] DEBUG -- :   [1m[35mPlayer Load (1.8ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:17.757891 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:17.759969 #23223] DEBUG -- :   [1m[35mSaveState Load (1.5ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>5, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:17.761109 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:17.765065 #23223] DEBUG -- :   [1m[35mSQL (2.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>5, :y=>9}"], ["steps", 10], ["id", 11]]
+D, [2015-07-25T19:20:17.767383 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:17.767611 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:17.768105 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.014681076
+10.0.2.2 - - [25/Jul/2015:19:20:17 +0000] "POST /game/move HTTP/1.1" 200 956 0.0235
+right
+D, [2015-07-25T19:20:17.933658 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:17.935329 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:17.936644 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>6, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:17.937391 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:17.940779 #23223] DEBUG -- :   [1m[35mSQL (2.2ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>6, :y=>9}"], ["steps", 11], ["id", 11]]
+D, [2015-07-25T19:20:17.942958 #23223] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:17.943199 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:17.943626 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012183238
+10.0.2.2 - - [25/Jul/2015:19:20:17 +0000] "POST /game/move HTTP/1.1" 200 956 0.0199
+right
+D, [2015-07-25T19:20:18.101962 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:18.104102 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:18.106034 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>7, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:18.107059 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:18.111434 #23223] DEBUG -- :   [1m[35mSQL (3.1ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>7, :y=>9}"], ["steps", 12], ["id", 11]]
+D, [2015-07-25T19:20:18.113966 #23223] DEBUG -- :   [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:18.114193 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:18.114627 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.014953256
+10.0.2.2 - - [25/Jul/2015:19:20:18 +0000] "POST /game/move HTTP/1.1" 200 960 0.0232
+left
+D, [2015-07-25T19:20:18.757185 #23223] DEBUG -- :   [1m[35mPlayer Load (1.3ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:18.758837 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:18.760149 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>6, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:18.760956 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:18.779674 #23223] DEBUG -- :   [1m[35mSQL (3.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>6, :y=>9}"], ["steps", 13], ["id", 11]]
+D, [2015-07-25T19:20:18.781982 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:18.782245 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:18.782764 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.027517765
+10.0.2.2 - - [25/Jul/2015:19:20:18 +0000] "POST /game/move HTTP/1.1" 200 956 0.0357
+right
+D, [2015-07-25T19:20:18.926862 #23223] DEBUG -- :   [1m[35mPlayer Load (1.7ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:18.928351 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:18.929632 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>7, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:18.930811 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:18.935354 #23223] DEBUG -- :   [1m[35mSQL (3.1ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>7, :y=>9}"], ["steps", 14], ["id", 11]]
+D, [2015-07-25T19:20:18.938507 #23223] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:18.938757 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:18.939191 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.014707523
+10.0.2.2 - - [25/Jul/2015:19:20:18 +0000] "POST /game/move HTTP/1.1" 200 960 0.0238
+right
+D, [2015-07-25T19:20:19.134019 #23223] DEBUG -- :   [1m[35mPlayer Load (1.7ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:19.136107 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:19.137980 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:19.138989 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:19.143319 #23223] DEBUG -- :   [1m[35mSQL (2.9ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>8, :y=>9}"], ["steps", 15], ["id", 11]]
+D, [2015-07-25T19:20:19.145707 #23223] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:19.145966 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:19.146404 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.014866692
+10.0.2.2 - - [25/Jul/2015:19:20:19 +0000] "POST /game/move HTTP/1.1" 200 952 0.0236
+up
+D, [2015-07-25T19:20:19.428689 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:19.430782 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:19.433597 #23223] DEBUG -- :   [1m[35mSaveState Load (2.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:19.435338 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:19.441156 #23223] DEBUG -- :   [1m[35mSQL (3.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>8, :y=>8}"], ["steps", 16], ["id", 11]]
+D, [2015-07-25T19:20:19.443825 #23223] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:19.444084 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:19.444518 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.018036997
+10.0.2.2 - - [25/Jul/2015:19:20:19 +0000] "POST /game/move HTTP/1.1" 200 960 0.0255
+up
+D, [2015-07-25T19:20:19.685036 #23223] DEBUG -- :   [1m[35mPlayer Load (1.6ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:19.686459 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:19.687934 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:19.688851 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:19.693141 #23223] DEBUG -- :   [1m[35mSQL (3.1ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>8, :y=>7}"], ["steps", 17], ["id", 11]]
+D, [2015-07-25T19:20:19.695351 #23223] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:19.695581 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:19.695994 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013214447
+10.0.2.2 - - [25/Jul/2015:19:20:19 +0000] "POST /game/move HTTP/1.1" 200 956 0.0206
+up
+D, [2015-07-25T19:20:19.878755 #23223] DEBUG -- :   [1m[35mPlayer Load (1.7ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:19.881273 #23223] DEBUG -- :   [1m[36mSaveState Load (1.7ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:19.883601 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:19.884753 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:19.885680 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:19.885975 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:19.886381 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.01013587
+10.0.2.2 - - [25/Jul/2015:19:20:19 +0000] "POST /game/move HTTP/1.1" 200 956 0.0197
+right
+D, [2015-07-25T19:20:20.101243 #23223] DEBUG -- :   [1m[36mPlayer Load (2.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:20.103150 #23223] DEBUG -- :   [1m[35mSaveState Load (1.3ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:20.104682 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:20.105416 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:20.109428 #23223] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>7}"], ["steps", 18], ["id", 11]]
+D, [2015-07-25T19:20:20.111468 #23223] DEBUG -- :   [1m[35m (1.7ms)[0m  commit transaction
+D, [2015-07-25T19:20:20.111838 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:20.112294 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.0136867
+10.0.2.2 - - [25/Jul/2015:19:20:20 +0000] "POST /game/move HTTP/1.1" 200 956 0.0220
+up
+D, [2015-07-25T19:20:20.311138 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:20.312860 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:20.314441 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>6}
+row count: 3
+D, [2015-07-25T19:20:20.315216 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:20.319557 #23223] DEBUG -- :   [1m[36mSQL (3.1ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>6}"], ["steps", 19], ["id", 11]]
+D, [2015-07-25T19:20:20.321949 #23223] DEBUG -- :   [1m[35m (2.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:20.322248 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:20.322726 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.01366848
+10.0.2.2 - - [25/Jul/2015:19:20:20 +0000] "POST /game/move HTTP/1.1" 200 956 0.0234
+up
+D, [2015-07-25T19:20:20.463600 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:20.465588 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:20.467068 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>5}
+row count: 3
+D, [2015-07-25T19:20:20.467886 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:20.471508 #23223] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "map" = ?, "coins" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>5}"], ["map", "# # # # # # # # # # # #|# # E # # # # # # # # #|# # - # # # # - - - # #|# # - - - - # - # G P #|# # # # # - # - - # # #|# # # - # - D # - - # #|# # # # # # - # # - # #|# # - - - - - # - - # #|# K - # # # - # - # # #|# # # - - - - - - # T #|# # # - # # # # # # T #|# # # C # P T T G T T #|# # # # # # # # # # # #"], ["coins", 1], ["steps", 20], ["id", 11]]
+D, [2015-07-25T19:20:20.474028 #23223] DEBUG -- :   [1m[35m (2.1ms)[0m  commit transaction
+D, [2015-07-25T19:20:20.474261 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:20.474648 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.013140823
+10.0.2.2 - - [25/Jul/2015:19:20:20 +0000] "POST /game/move HTTP/1.1" 200 956 0.0210
+left
+D, [2015-07-25T19:20:20.980904 #23223] DEBUG -- :   [1m[36mPlayer Load (1.7ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:20.983152 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:20.985331 #23223] DEBUG -- :   [1m[36mSaveState Load (1.8ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>8, :y=>5}
+row count: 3
+D, [2015-07-25T19:20:20.986259 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:20.990450 #23223] DEBUG -- :   [1m[36mSQL (3.0ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>8, :y=>5}"], ["steps", 21], ["id", 11]]
+D, [2015-07-25T19:20:20.992932 #23223] DEBUG -- :   [1m[35m (2.2ms)[0m  commit transaction
+D, [2015-07-25T19:20:20.993162 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:20.993609 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.015075744
+10.0.2.2 - - [25/Jul/2015:19:20:20 +0000] "POST /game/move HTTP/1.1" 200 960 0.0227
+right
+D, [2015-07-25T19:20:21.188760 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:21.190311 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:21.191561 #23223] DEBUG -- :   [1m[36mSaveState Load (0.9ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>5}
+row count: 3
+D, [2015-07-25T19:20:21.192343 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.196628 #23223] DEBUG -- :   [1m[36mSQL (3.1ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>5}"], ["steps", 22], ["id", 11]]
+D, [2015-07-25T19:20:21.198711 #23223] DEBUG -- :   [1m[35m (1.7ms)[0m  commit transaction
+D, [2015-07-25T19:20:21.198940 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:21.199323 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012661092
+10.0.2.2 - - [25/Jul/2015:19:20:21 +0000] "POST /game/move HTTP/1.1" 200 956 0.0215
+down
+D, [2015-07-25T19:20:21.430163 #23223] DEBUG -- :   [1m[36mPlayer Load (1.7ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:21.432070 #23223] DEBUG -- :   [1m[35mSaveState Load (1.3ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:21.433484 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>6}
+row count: 3
+D, [2015-07-25T19:20:21.434754 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.441015 #23223] DEBUG -- :   [1m[36mSQL (3.5ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>6}"], ["steps", 23], ["id", 11]]
+D, [2015-07-25T19:20:21.443465 #23223] DEBUG -- :   [1m[35m (2.1ms)[0m  commit transaction
+D, [2015-07-25T19:20:21.443752 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:21.444292 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+operation time: 0.017473788
+10.0.2.2 - - [25/Jul/2015:19:20:21 +0000] "POST /game/move HTTP/1.1" 200 960 0.0293
+down
+D, [2015-07-25T19:20:21.628084 #23223] DEBUG -- :   [1m[36mPlayer Load (1.3ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:21.629859 #23223] DEBUG -- :   [1m[35mSaveState Load (1.3ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:21.631967 #23223] DEBUG -- :   [1m[36mSaveState Load (1.3ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:21.633473 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.638306 #23223] DEBUG -- :   [1m[36mSQL (3.4ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>9, :y=>7}"], ["steps", 24], ["id", 11]]
+D, [2015-07-25T19:20:21.640634 #23223] DEBUG -- :   [1m[35m (2.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:21.640914 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:21.641330 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.015183159
+10.0.2.2 - - [25/Jul/2015:19:20:21 +0000] "POST /game/move HTTP/1.1" 200 956 0.0223
+down
+D, [2015-07-25T19:20:21.764430 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:21.766141 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:21.767423 #23223] DEBUG -- :   [1m[36mSaveState Load (0.9ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>9, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:21.768202 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.768985 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:21.769190 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.769657 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+operation time: 0.007421668
+10.0.2.2 - - [25/Jul/2015:19:20:21 +0000] "POST /game/move HTTP/1.1" 200 956 0.0146
+left
+D, [2015-07-25T19:20:21.949255 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:21.950890 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:21.952633 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:21.954864 #23223] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:21.960783 #23223] DEBUG -- :   [1m[35mSQL (3.9ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>8, :y=>7}"], ["steps", 25], ["id", 11]]
+D, [2015-07-25T19:20:21.963868 #23223] DEBUG -- :   [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:21.964227 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:21.965012 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.017848945
+10.0.2.2 - - [25/Jul/2015:19:20:21 +0000] "POST /game/move HTTP/1.1" 200 956 0.0274
+down
+D, [2015-07-25T19:20:22.116871 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:22.118431 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:22.119913 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:22.121213 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:22.126083 #23223] DEBUG -- :   [1m[35mSQL (3.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>8, :y=>8}"], ["steps", 26], ["id", 11]]
+D, [2015-07-25T19:20:22.129089 #23223] DEBUG -- :   [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:22.129332 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:22.129827 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+operation time: 0.015127004
+10.0.2.2 - - [25/Jul/2015:19:20:22 +0000] "POST /game/move HTTP/1.1" 200 960 0.0251
+left
+D, [2015-07-25T19:20:22.350306 #23223] DEBUG -- :   [1m[35mPlayer Load (1.6ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:22.352346 #23223] DEBUG -- :   [1m[36mSaveState Load (1.3ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:22.353799 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>8, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:22.354590 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:22.355368 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:22.355679 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:22.356124 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.008143555
+10.0.2.2 - - [25/Jul/2015:19:20:22 +0000] "POST /game/move HTTP/1.1" 200 960 0.0160
+down
+D, [2015-07-25T19:20:22.676964 #23223] DEBUG -- :   [1m[36mPlayer Load (1.3ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:22.678826 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:22.680276 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>8, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:22.680999 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:22.684497 #23223] DEBUG -- :   [1m[36mSQL (2.3ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>8, :y=>9}"], ["steps", 27], ["id", 11]]
+D, [2015-07-25T19:20:22.687064 #23223] DEBUG -- :   [1m[35m (2.2ms)[0m  commit transaction
+D, [2015-07-25T19:20:22.687292 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:22.687719 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012613644
+10.0.2.2 - - [25/Jul/2015:19:20:22 +0000] "POST /game/move HTTP/1.1" 200 952 0.0209
+left
+D, [2015-07-25T19:20:22.868823 #23223] DEBUG -- :   [1m[36mPlayer Load (1.6ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:22.871068 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:22.873141 #23223] DEBUG -- :   [1m[36mSaveState Load (1.7ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>7, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:22.874086 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:22.878371 #23223] DEBUG -- :   [1m[36mSQL (3.1ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>7, :y=>9}"], ["steps", 28], ["id", 11]]
+D, [2015-07-25T19:20:22.880545 #23223] DEBUG -- :   [1m[35m (1.8ms)[0m  commit transaction
+D, [2015-07-25T19:20:22.880789 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:22.881173 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.014555662
+10.0.2.2 - - [25/Jul/2015:19:20:22 +0000] "POST /game/move HTTP/1.1" 200 960 0.0219
+left
+D, [2015-07-25T19:20:23.117561 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:23.119002 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:23.120570 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>9}
+row count: 3
+D, [2015-07-25T19:20:23.121615 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:23.126502 #23223] DEBUG -- :   [1m[36mSQL (3.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>9}"], ["steps", 29], ["id", 11]]
+D, [2015-07-25T19:20:23.129158 #23223] DEBUG -- :   [1m[35m (2.3ms)[0m  commit transaction
+D, [2015-07-25T19:20:23.129430 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:23.129977 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.014733885
+10.0.2.2 - - [25/Jul/2015:19:20:23 +0000] "POST /game/move HTTP/1.1" 200 956 0.0244
+up
+D, [2015-07-25T19:20:23.430494 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:23.432038 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:23.433755 #23223] DEBUG -- :   [1m[36mSaveState Load (1.3ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:23.435163 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:23.440286 #23223] DEBUG -- :   [1m[36mSQL (3.1ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>8}"], ["steps", 30], ["id", 11]]
+D, [2015-07-25T19:20:23.442491 #23223] DEBUG -- :   [1m[35m (1.8ms)[0m  commit transaction
+D, [2015-07-25T19:20:23.442745 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:23.443181 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.014904943
+10.0.2.2 - - [25/Jul/2015:19:20:23 +0000] "POST /game/move HTTP/1.1" 200 964 0.0247
+up
+D, [2015-07-25T19:20:23.613650 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:23.615676 #23223] DEBUG -- :   [1m[35mSaveState Load (1.5ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:23.617045 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:23.617783 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:23.621542 #23223] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>7}"], ["steps", 31], ["id", 11]]
+D, [2015-07-25T19:20:23.623428 #23223] DEBUG -- :   [1m[35m (1.6ms)[0m  commit transaction
+D, [2015-07-25T19:20:23.623657 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:23.624062 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012448022
+10.0.2.2 - - [25/Jul/2015:19:20:23 +0000] "POST /game/move HTTP/1.1" 200 956 0.0215
+left
+D, [2015-07-25T19:20:23.956401 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:23.957967 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:23.959218 #23223] DEBUG -- :   [1m[36mSaveState Load (0.9ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:23.960028 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:23.964649 #23223] DEBUG -- :   [1m[36mSQL (3.3ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>5, :y=>7}"], ["steps", 32], ["id", 11]]
+D, [2015-07-25T19:20:23.967420 #23223] DEBUG -- :   [1m[35m (2.5ms)[0m  commit transaction
+D, [2015-07-25T19:20:23.967687 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:23.968097 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.013878659
+10.0.2.2 - - [25/Jul/2015:19:20:23 +0000] "POST /game/move HTTP/1.1" 200 960 0.0230
+up
+D, [2015-07-25T19:20:24.212024 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:24.213624 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:24.215162 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:24.215917 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:24.216696 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:24.216955 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:24.217364 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.007526004
+10.0.2.2 - - [25/Jul/2015:19:20:24 +0000] "POST /game/move HTTP/1.1" 200 960 0.0156
+left
+D, [2015-07-25T19:20:24.388761 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:24.390394 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:24.391667 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>4, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:24.392448 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:24.397402 #23223] DEBUG -- :   [1m[35mSQL (3.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>4, :y=>7}"], ["steps", 33], ["id", 11]]
+D, [2015-07-25T19:20:24.400002 #23223] DEBUG -- :   [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:24.400271 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:24.400703 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013967931
+10.0.2.2 - - [25/Jul/2015:19:20:24 +0000] "POST /game/move HTTP/1.1" 200 952 0.0222
+left
+D, [2015-07-25T19:20:24.549721 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:24.551589 #23223] DEBUG -- :   [1m[36mSaveState Load (1.4ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:24.553456 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:24.554374 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:24.558355 #23223] DEBUG -- :   [1m[35mSQL (2.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>7}"], ["steps", 34], ["id", 11]]
+D, [2015-07-25T19:20:24.560739 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:24.560975 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:24.561381 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013845613
+10.0.2.2 - - [25/Jul/2015:19:20:24 +0000] "POST /game/move HTTP/1.1" 200 956 0.0227
+left
+D, [2015-07-25T19:20:24.772148 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:24.773825 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:24.775960 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:24.776932 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:24.780841 #23223] DEBUG -- :   [1m[35mSQL (2.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>7}"], ["steps", 35], ["id", 11]]
+D, [2015-07-25T19:20:24.782972 #23223] DEBUG -- :   [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:24.783199 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:24.783582 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013505107
+10.0.2.2 - - [25/Jul/2015:19:20:24 +0000] "POST /game/move HTTP/1.1" 200 951 0.0220
+down
+D, [2015-07-25T19:20:25.196765 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:25.198296 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:25.199831 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:25.200767 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:25.205675 #23223] DEBUG -- :   [1m[35mSQL (3.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>8}"], ["steps", 36], ["id", 11]]
+D, [2015-07-25T19:20:25.208477 #23223] DEBUG -- :   [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:25.208868 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:25.209851 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+operation time: 0.015368025
+10.0.2.2 - - [25/Jul/2015:19:20:25 +0000] "POST /game/move HTTP/1.1" 200 955 0.0237
+left
+D, [2015-07-25T19:20:25.367147 #23223] DEBUG -- :   [1m[35mPlayer Load (1.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:25.369029 #23223] DEBUG -- :   [1m[36mSaveState Load (1.4ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:25.370711 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>1, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:25.371507 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:25.375404 #23223] DEBUG -- :   [1m[35mSQL (2.7ms)[0m  UPDATE "save_states" SET "player_position" = ?, "map" = ?, "keys" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>1, :y=>8}"], ["map", "# # # # # # # # # # # #|# # E # # # # # # # # #|# # - # # # # - - - # #|# # - - - - # - # G P #|# # # # # - # - - # # #|# # # - # - D # - - # #|# # # # # # - # # - # #|# # - - - - - # - - # #|# - - # # # - # - # # #|# # # - - - - - - # T #|# # # - # # # # # # T #|# # # C # P T T G T T #|# # # # # # # # # # # #"], ["keys", 1], ["steps", 37], ["id", 11]]
+D, [2015-07-25T19:20:25.377598 #23223] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:25.377862 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:25.378388 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013096222
+10.0.2.2 - - [25/Jul/2015:19:20:25 +0000] "POST /game/move HTTP/1.1" 200 952 0.0228
+right
+D, [2015-07-25T19:20:25.741511 #23223] DEBUG -- :   [1m[35mPlayer Load (1.9ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:25.743651 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:25.745743 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>8}
+row count: 3
+D, [2015-07-25T19:20:25.746688 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:25.750721 #23223] DEBUG -- :   [1m[35mSQL (2.9ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>8}"], ["steps", 38], ["id", 11]]
+D, [2015-07-25T19:20:25.753059 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:25.753309 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:25.753717 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.014872987
+10.0.2.2 - - [25/Jul/2015:19:20:25 +0000] "POST /game/move HTTP/1.1" 200 960 0.0230
+up
+D, [2015-07-25T19:20:25.972248 #23223] DEBUG -- :   [1m[35mPlayer Load (1.6ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:25.974802 #23223] DEBUG -- :   [1m[36mSaveState Load (2.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:25.977073 #23223] DEBUG -- :   [1m[35mSaveState Load (1.7ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:25.978058 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:25.982178 #23223] DEBUG -- :   [1m[35mSQL (2.9ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>7}"], ["steps", 39], ["id", 11]]
+D, [2015-07-25T19:20:25.985243 #23223] DEBUG -- :   [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:25.985525 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:25.986105 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+operation time: 0.016136718
+10.0.2.2 - - [25/Jul/2015:19:20:25 +0000] "POST /game/move HTTP/1.1" 200 956 0.0236
+up
+D, [2015-07-25T19:20:26.188700 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:26.190436 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:26.191773 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:26.192532 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:26.193342 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:26.193556 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:26.193973 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.007416917
+10.0.2.2 - - [25/Jul/2015:19:20:26 +0000] "POST /game/move HTTP/1.1" 200 956 0.0165
+right
+D, [2015-07-25T19:20:26.397313 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:26.399416 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:26.401019 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>3, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:26.401990 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:26.405816 #23223] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>3, :y=>7}"], ["steps", 40], ["id", 11]]
+D, [2015-07-25T19:20:26.408223 #23223] DEBUG -- :   [1m[35m (2.1ms)[0m  commit transaction
+D, [2015-07-25T19:20:26.408516 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:26.408931 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.01383655
+10.0.2.2 - - [25/Jul/2015:19:20:26 +0000] "POST /game/move HTTP/1.1" 200 956 0.0228
+right
+D, [2015-07-25T19:20:26.628289 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:26.630369 #23223] DEBUG -- :   [1m[35mSaveState Load (1.6ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:26.632989 #23223] DEBUG -- :   [1m[36mSaveState Load (2.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>4, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:26.634253 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:26.638552 #23223] DEBUG -- :   [1m[36mSQL (3.0ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>4, :y=>7}"], ["steps", 41], ["id", 11]]
+D, [2015-07-25T19:20:26.640701 #23223] DEBUG -- :   [1m[35m (1.8ms)[0m  commit transaction
+D, [2015-07-25T19:20:26.640974 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:26.641397 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.01515321
+10.0.2.2 - - [25/Jul/2015:19:20:26 +0000] "POST /game/move HTTP/1.1" 200 952 0.0235
+right
+D, [2015-07-25T19:20:26.811241 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:26.812842 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:26.814223 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:26.815032 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:26.818533 #23223] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>5, :y=>7}"], ["steps", 42], ["id", 11]]
+D, [2015-07-25T19:20:26.820569 #23223] DEBUG -- :   [1m[35m (1.7ms)[0m  commit transaction
+D, [2015-07-25T19:20:26.820824 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:26.821223 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012000278
+10.0.2.2 - - [25/Jul/2015:19:20:26 +0000] "POST /game/move HTTP/1.1" 200 960 0.0191
+right
+D, [2015-07-25T19:20:27.019562 #23223] DEBUG -- :   [1m[36mPlayer Load (1.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:27.021453 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:27.022803 #23223] DEBUG -- :   [1m[36mSaveState Load (0.9ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>7}
+row count: 3
+D, [2015-07-25T19:20:27.023584 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:27.027663 #23223] DEBUG -- :   [1m[36mSQL (2.8ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>7}"], ["steps", 43], ["id", 11]]
+D, [2015-07-25T19:20:27.030492 #23223] DEBUG -- :   [1m[35m (2.4ms)[0m  commit transaction
+D, [2015-07-25T19:20:27.031412 #23223] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:27.032123 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.014030976
+10.0.2.2 - - [25/Jul/2015:19:20:27 +0000] "POST /game/move HTTP/1.1" 200 956 0.0238
+up
+D, [2015-07-25T19:20:27.293100 #23223] DEBUG -- :   [1m[36mPlayer Load (1.6ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:27.294989 #23223] DEBUG -- :   [1m[35mSaveState Load (1.5ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:27.296485 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>6}
+row count: 3
+D, [2015-07-25T19:20:27.297201 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:27.301152 #23223] DEBUG -- :   [1m[36mSQL (2.8ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>6}"], ["steps", 44], ["id", 11]]
+D, [2015-07-25T19:20:27.306250 #23223] DEBUG -- :   [1m[35m (3.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:27.306512 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:27.306947 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.016156501
+10.0.2.2 - - [25/Jul/2015:19:20:27 +0000] "POST /game/move HTTP/1.1" 200 956 0.0253
+up
+D, [2015-07-25T19:20:27.556257 #23223] DEBUG -- :   [1m[36mPlayer Load (1.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:27.558081 #23223] DEBUG -- :   [1m[35mSaveState Load (1.3ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:27.559833 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>6, :y=>5}
+row count: 3
+D, [2015-07-25T19:20:27.560648 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:27.564959 #23223] DEBUG -- :   [1m[36mSQL (3.0ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "map" = ?, "keys" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>6, :y=>5}"], ["map", "# # # # # # # # # # # #|# # E # # # # # # # # #|# # - # # # # - - - # #|# # - - - - # - # G P #|# # # # # - # - - # # #|# # # - # - - # - - # #|# # # # # # - # # - # #|# # - - - - - # - - # #|# - - # # # - # - # # #|# # # - - - - - - # T #|# # # - # # # # # # T #|# # # C # P T T G T T #|# # # # # # # # # # # #"], ["keys", 0], ["steps", 45], ["id", 11]]
+D, [2015-07-25T19:20:27.567141 #23223] DEBUG -- :   [1m[35m (1.9ms)[0m  commit transaction
+D, [2015-07-25T19:20:27.567429 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:27.567882 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.013712241
+10.0.2.2 - - [25/Jul/2015:19:20:27 +0000] "POST /game/move HTTP/1.1" 200 960 0.0225
+left
+D, [2015-07-25T19:20:28.187946 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:28.189526 #23223] DEBUG -- :   [1m[35mSaveState Load (1.1ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:28.190949 #23223] DEBUG -- :   [1m[36mSaveState Load (1.0ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>5}
+row count: 3
+D, [2015-07-25T19:20:28.191785 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:28.195362 #23223] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>5, :y=>5}"], ["steps", 46], ["id", 11]]
+D, [2015-07-25T19:20:28.197780 #23223] DEBUG -- :   [1m[35m (2.1ms)[0m  commit transaction
+D, [2015-07-25T19:20:28.198010 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:28.198396 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.012613901
+10.0.2.2 - - [25/Jul/2015:19:20:28 +0000] "POST /game/move HTTP/1.1" 200 956 0.0208
+up
+D, [2015-07-25T19:20:28.469373 #23223] DEBUG -- :   [1m[36mPlayer Load (1.6ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:28.471185 #23223] DEBUG -- :   [1m[35mSaveState Load (1.3ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:28.473155 #23223] DEBUG -- :   [1m[36mSaveState Load (1.5ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>4}
+row count: 3
+D, [2015-07-25T19:20:28.474206 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:28.478295 #23223] DEBUG -- :   [1m[36mSQL (2.9ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>5, :y=>4}"], ["steps", 47], ["id", 11]]
+D, [2015-07-25T19:20:28.480513 #23223] DEBUG -- :   [1m[35m (1.9ms)[0m  commit transaction
+D, [2015-07-25T19:20:28.480751 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:28.481219 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.01412213
+10.0.2.2 - - [25/Jul/2015:19:20:28 +0000] "POST /game/move HTTP/1.1" 200 960 0.0231
+left
+D, [2015-07-25T19:20:28.756117 #23223] DEBUG -- :   [1m[36mPlayer Load (1.8ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:28.758468 #23223] DEBUG -- :   [1m[35mSaveState Load (1.8ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:28.760543 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>5, :y=>4}
+row count: 3
+D, [2015-07-25T19:20:28.761442 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:28.762290 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:28.762532 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:28.762938 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.009434738
+10.0.2.2 - - [25/Jul/2015:19:20:28 +0000] "POST /game/move HTTP/1.1" 200 960 0.0173
+up
+D, [2015-07-25T19:20:29.013086 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:29.014730 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:29.016081 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>5, :y=>3}
+row count: 3
+D, [2015-07-25T19:20:29.016813 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.020302 #23223] DEBUG -- :   [1m[35mSQL (2.3ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>5, :y=>3}"], ["steps", 48], ["id", 11]]
+D, [2015-07-25T19:20:29.022726 #23223] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:29.022955 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:29.023414 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012390943
+10.0.2.2 - - [25/Jul/2015:19:20:29 +0000] "POST /game/move HTTP/1.1" 200 952 0.0207
+left
+D, [2015-07-25T19:20:29.195528 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:29.197245 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:29.198502 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>4, :y=>3}
+row count: 3
+D, [2015-07-25T19:20:29.199322 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.205125 #23223] DEBUG -- :   [1m[35mSQL (4.0ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>4, :y=>3}"], ["steps", 49], ["id", 11]]
+D, [2015-07-25T19:20:29.207860 #23223] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:29.208127 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:29.208533 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.015057302
+10.0.2.2 - - [25/Jul/2015:19:20:29 +0000] "POST /game/move HTTP/1.1" 200 956 0.0230
+left
+D, [2015-07-25T19:20:29.404747 #23223] DEBUG -- :   [1m[35mPlayer Load (1.5ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:29.406341 #23223] DEBUG -- :   [1m[36mSaveState Load (1.2ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:29.407606 #23223] DEBUG -- :   [1m[35mSaveState Load (0.9ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>3}
+row count: 3
+D, [2015-07-25T19:20:29.408402 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.411881 #23223] DEBUG -- :   [1m[35mSQL (2.3ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>3}"], ["steps", 50], ["id", 11]]
+D, [2015-07-25T19:20:29.414312 #23223] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:29.414541 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:29.414946 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.012384472
+10.0.2.2 - - [25/Jul/2015:19:20:29 +0000] "POST /game/move HTTP/1.1" 200 956 0.0210
+left
+D, [2015-07-25T19:20:29.755553 #23223] DEBUG -- :   [1m[35mPlayer Load (1.8ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:29.758044 #23223] DEBUG -- :   [1m[36mSaveState Load (1.9ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:29.760085 #23223] DEBUG -- :   [1m[35mSaveState Load (1.6ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>3}
+row count: 3
+D, [2015-07-25T19:20:29.761007 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.765265 #23223] DEBUG -- :   [1m[35mSQL (3.0ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>3}"], ["steps", 51], ["id", 11]]
+D, [2015-07-25T19:20:29.767564 #23223] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:29.767845 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:29.768343 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+operation time: 0.015341348
+10.0.2.2 - - [25/Jul/2015:19:20:29 +0000] "POST /game/move HTTP/1.1" 200 952 0.0236
+left
+D, [2015-07-25T19:20:29.961169 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:29.962719 #23223] DEBUG -- :   [1m[36mSaveState Load (1.1ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:29.964069 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>2, :y=>3}
+row count: 3
+D, [2015-07-25T19:20:29.964852 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.965691 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-07-25T19:20:29.965901 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:29.966268 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+operation time: 0.007061515
+10.0.2.2 - - [25/Jul/2015:19:20:29 +0000] "POST /game/move HTTP/1.1" 200 952 0.0136
+up
+D, [2015-07-25T19:20:30.091083 #23223] DEBUG -- :   [1m[36mPlayer Load (1.3ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:30.092717 #23223] DEBUG -- :   [1m[35mSaveState Load (1.2ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:30.094675 #23223] DEBUG -- :   [1m[36mSaveState Load (1.6ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+player position: {:x=>2, :y=>2}
+row count: 3
+D, [2015-07-25T19:20:30.095455 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:30.098886 #23223] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mUPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?[0m  [["player_position", "{:x=>2, :y=>2}"], ["steps", 52], ["id", 11]]
+D, [2015-07-25T19:20:30.101513 #23223] DEBUG -- :   [1m[35m (2.3ms)[0m  commit transaction
+D, [2015-07-25T19:20:30.101774 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:30.102265 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+operation time: 0.013195406
+10.0.2.2 - - [25/Jul/2015:19:20:30 +0000] "POST /game/move HTTP/1.1" 200 952 0.0206
+up
+D, [2015-07-25T19:20:31.179624 #23223] DEBUG -- :   [1m[36mPlayer Load (1.5ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 11]]
+D, [2015-07-25T19:20:31.181455 #23223] DEBUG -- :   [1m[35mSaveState Load (1.4ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+D, [2015-07-25T19:20:31.183340 #23223] DEBUG -- :   [1m[36mSaveState Load (1.5ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:31.185004 #23223] DEBUG -- :   [1m[35mMap Load (1.3ms)[0m  SELECT  "maps".* FROM "maps" WHERE "maps"."number" = ? LIMIT 1  [["number", 1]]
+new level position: {:x=>2, :y=>11}
+player position: {:x=>2, :y=>11}
+row count: 3
+D, [2015-07-25T19:20:31.186229 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:31.190075 #23223] DEBUG -- :   [1m[35mSQL (2.6ms)[0m  UPDATE "save_states" SET "player_position" = ?, "map" = ?, "current_level" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>2, :y=>11}"], ["map", "# # # # # # # # # # #|# # # # # # # T # # #|# T T G # G - - - K #|# # P # # P # - # K #|# # # # # # - - - # #|# E D - T - D # - - #|# # # # # # # # # - #|# # - - - - - # - - #|# # - # # # - # - # #|# # - - - # - - - # #|# # # - # # # T # # #|# # - - # # # # # # #|# # # # # # # # # # #"], ["current_level", 1], ["steps", 53], ["id", 11]]
+D, [2015-07-25T19:20:31.192356 #23223] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:31.192618 #23223] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-07-25T19:20:31.193616 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.016176512
+10.0.2.2 - - [25/Jul/2015:19:20:31 +0000] "POST /game/move HTTP/1.1" 200 952 0.0241
+right
+D, [2015-07-25T19:20:32.778731 #23223] DEBUG -- :   [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 11]]
+D, [2015-07-25T19:20:32.780631 #23223] DEBUG -- :   [1m[36mSaveState Load (1.4ms)[0m  [1mSELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1[0m  [["player_id", 11]]
+D, [2015-07-25T19:20:32.782012 #23223] DEBUG -- :   [1m[35mSaveState Load (1.0ms)[0m  SELECT  "save_states".* FROM "save_states" WHERE "save_states"."player_id" = ? LIMIT 1  [["player_id", 11]]
+player position: {:x=>3, :y=>11}
+row count: 3
+D, [2015-07-25T19:20:32.783116 #23223] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-07-25T19:20:32.787369 #23223] DEBUG -- :   [1m[35mSQL (3.0ms)[0m  UPDATE "save_states" SET "player_position" = ?, "steps" = ? WHERE "save_states"."id" = ?  [["player_position", "{:x=>3, :y=>11}"], ["steps", 54], ["id", 11]]
+D, [2015-07-25T19:20:32.789508 #23223] DEBUG -- :   [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+D, [2015-07-25T19:20:32.789746 #23223] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-07-25T19:20:32.790195 #23223] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+operation time: 0.013449582
+10.0.2.2 - - [25/Jul/2015:19:20:32 +0000] "POST /game/move HTTP/1.1" 200 952 0.0213
