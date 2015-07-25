@@ -1,5 +1,6 @@
 body {
   background: url('http://static.tumblr.com/eff850ce5c4d091cf4bf03a9a7fb63ca/kusdvh1/48Kmqwz2a/tumblr_static_labyrinth_3.jpg');
+  font-family: 'Press Start 2P', cursive;
 }
 div {
   width: 64px;
@@ -116,7 +117,6 @@ div {
   background-repeat: no-repeat;
 }
 #splash_screen {
-  font-family: 'Lobster', cursive;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -127,10 +127,11 @@ div {
   -webkit-text-stroke-color: rgba(255,255,255,0.5);
 }
 #menu_wrapper {
-  width: 196px;
+  min-width: 196px;
   margin: auto;
   margin-top: 24px;
   margin-bottom: 24px;
+  text-align: center;
 }
 #sign_in_wrapper {
   width: 196px;
@@ -138,22 +139,23 @@ div {
 }
 .button {
   display: block;
-  width: 196px;
+  min-width: 196px;
   height: 64px;
-  border: 1px solid black;
   border-radius: 12px;
   text-align: center;
   line-height: 64px;
   font-size: 24px;
   text-transform: uppercase;
   background-color: #D6A36D;
+  background-image: url('/images/tiles/loseStone.png');
+  background-repeat: repeat;
+  overflow: hidden;
   
 }
 a {
   text-decoration: none;
   color: white;
 }
-
 form, h1 {
   color: #D6A36D;
 }
@@ -166,10 +168,9 @@ input[type='submit'] {
   height: 32px;
   color: white;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 30px;
 }
 #end_screen {
-  font-family: 'Lobster', cursive;
   width: 40%;
   height: 100%;
   margin: auto;
