@@ -3,7 +3,7 @@ $(document).ready(function() {
   // var timeEnd = 0
   $('#leave_message').bind('click', event, leaveMessage);
   $(window).bind('keydown', event, move);
-
+  // var timer = setInterval(move,1000);
   function insertTiles(message){
     timeEnd = Date.now();
     // console.log('total time to move', timeEnd - timeStart);
@@ -34,21 +34,25 @@ $(document).ready(function() {
   function move(e)
   {
     // timeStart = Date.now();
+    var keyCode = e ? e.keyCode : "";
     var left = 37,
         right = 39,
         up = 38,
         down = 40;
-    if(e.keyCode == left){
+    if(keyCode == left){
       ajax('dir=left', '/game/move', insertTiles);
     }else
-    if(e.keyCode == right){
+    if(keyCode == right){
       ajax('dir=right', '/game/move', insertTiles);
     }else
-    if(e.keyCode == up){
+    if(keyCode == up){
       ajax('dir=up', '/game/move', insertTiles);
     }else
-    if(e.keyCode == down){
+    if(keyCode == down){
       ajax('dir=down', '/game/move', insertTiles);
+    }else
+    {
+      ajax('dir=', '/game/move', insertTiles);
     }
   }
 });

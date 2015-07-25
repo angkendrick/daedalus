@@ -91,6 +91,8 @@ post '/game/move' do
     @tiles = @game.move_player(0, -1)
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
+  else
+    @tiles = @game.move_player(0,0)
   end
   # find messages
   @messages = Message.find_by(position: @player.position.to_s, level_number: @player.current_level)
