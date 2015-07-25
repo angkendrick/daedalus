@@ -145,7 +145,7 @@ class Game
     x = @player.position[:x] + x_offset - 1
     y = @player.position[:y] + y_offset - 1
     message = Message.get_message_at({ x: x, y: y }, @player.current_level)
-    other_player = SaveState.exists?(player_position: {x: x, y: y}.to_s, current_level: @player.current_level)
+    other_player = SaveState.exists?(player_position: {x: x, y: y}.to_s, current_level: @player.current_level) if !(x_offset == 0 && y_offset == 0)
     "<div class='#{class_var} #{'message' if message} #{'player' if other_player} inline'></div>"
   end
 
