@@ -108,7 +108,7 @@ class Game
         when 'K'
           tiles += default_div('key')
         when 'C'
-          tiles += default_div('start')
+          tiles += default_div('player')
         when 'E'
           tiles += default_div('exit')
         else
@@ -140,7 +140,8 @@ class Game
 
   private
   def default_div(class_var)
-    "<div class='#{class_var} inline'></div>"
+    message = Message.get_message_at(@player.position, @player.current_level)
+    "<div class='#{class_var} #{'message' if message} inline'></div>"
   end
 
   def finish_maze

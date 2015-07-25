@@ -56,6 +56,7 @@ body {
 }
 .start {
   background-color: gray;
+  background-image: url('/images/player.gif'), url('/images/tiles/loseStone.png');
 }
 .exit {
   ackground-color: brown;
@@ -63,6 +64,10 @@ body {
 }
 .key_icon {
   background-image: url('/images/Key.png'), url('/images/tiles/loseStone.png');
+}
+.message {
+  background-color: green;
+  background-image: url('images/Sign.png'), url('/images/tiles/loseStone.png');
 }
 .outer_game_wrapper {
   width:100%;
@@ -123,8 +128,6 @@ body {
 }
 .player {
   background-image: url('/images/player.gif'), url('/images/tiles/loseStone.png');
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 #splash_screen {
   width: 100%;
