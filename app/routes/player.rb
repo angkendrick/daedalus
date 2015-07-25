@@ -36,16 +36,18 @@ post '/signup' do
     else
       erb :'player/signup'
     end
+  else
+    @player = nil
+    @error = "passwords don't match!"
+    erb :'player/signup'
   end
 end
 
 post '/login' do
-  @player = Player.new
   @player = Player.find_by(name: params[:name].strip)
   puts "entering if"
   if @player
     # binding.pry
-    
     if @player.password == params[:password]
       session[:id] = @player.id
       puts "authenticated"
@@ -56,6 +58,9 @@ post '/login' do
       puts "failed password1"
       erb :'player/login'
     end
+  else
+    @error = "Invalid username / password"
+    erb :'player/login'
   end
 
 end

@@ -1,7 +1,9 @@
 <h1>Sign-up</h1>
-
+<% if @error %>
+  <span class="error_message"><%= @error %></span>
+<% end %>
 <% if @player && @player.errors.any? %>
-    <strong>Some issues with your message, please fix them:</strong>
+    <span class="error_message">Some issues with your message, please fix them:</span>
     <ul>
       <% @player.errors.full_messages.each do |message| %>
         <li><%= message %></li>
