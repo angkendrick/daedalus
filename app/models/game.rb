@@ -145,8 +145,8 @@ class Game
     x = @player.position[:x] + x_offset - 1
     y = @player.position[:y] + y_offset - 1
     message = Message.get_message_at({ x: x, y: y }, @player.current_level)
-    other_player = SaveState.exists?(["player_id != ? and player_position = ? and current_level = ?", @player.id, {x: x, y: y}.to_s, @player.current_level])
-    "<div class='#{class_var} #{'message' if message} #{'player' if other_player} inline'></div>"
+    other_player = SaveState.find_by(["player_id != ? and player_position = ? and current_level = ? and updated_at > ?", @player.id, {x: x, y: y}.to_s, @player.current_level, Time.now - 10])
+    "<div class='#{class_var} #{'message' if message} #{'player' if other_player} inline'>#{other_player.name if other_player}</div>"
   end
 
   def finish_maze
