@@ -18,7 +18,7 @@ post '/game/new' do
   @player = Player.find(session[:id])
   @player.set_variables
   
-  @map = Map.find_by(number: 3).level
+  @map = Map.find_by(number: 0).level
   #binding.pry
   @player.set_variables 
   @level = Level.new(@map)
@@ -28,7 +28,7 @@ post '/game/new' do
   if @existing_save
     @current_save = SaveState.find_by(player_id: @player.id)
     @current_save.map = strlvl
-    @current_save.current_level = 3
+    @current_save.current_level = 0
     @current_save.save
   else
     @current_save = SaveState.create(player_id: @player.id, map: strlvl, current_level: 0)
@@ -91,11 +91,9 @@ post '/game/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
-  puts "keys: #{@player.keys} gems: #{@player.gems} coins: #{@player.coins}"
   # player stats
   @score = @game.calculate_score
   #binding.pry
-  puts "position: #{@player.position} level: #{@player.current_level}"
   @score = [@score || 0, @current_save.score || 0].max #always get the highest score
   @current_save.update(
     player_position: @player.position.to_s, 
@@ -112,6 +110,23 @@ post '/game/move' do
   if @game.finished
     Highscore.create(player_id: @player.id, name: @player.name, highscore: @current_save.score)
   end
-  puts "position: #{@player.position} level: #{@player.current_level}"
   erb :tiles, :layout => false
 end
+
+post '/game/leave_message' do
+  @player = Player.find(session[:id])
+  @position = @player.position
+  @message = params[:message]
+  puts "message from player: #{@message}"
+end
+
+
+
+
+
+
+
+
+
+
+

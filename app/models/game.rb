@@ -130,7 +130,7 @@ class Game
     gems = "#{row_wrap_start}<div class='gems_icon inventory_icon'></div><div class='gems_amount inventory_amount'>#{@player.gems}</div>#{end_div}"
     coins = "#{row_wrap_start}<div class='coins_icon inventory_icon'></div><div class='coins_amount inventory_amount'>#{@player.coins}</div>#{end_div}"
     steps = "#{row_wrap_start}<div class='steps_icon inventory_icon'></div><div class='steps_amount inventory_amount'>#{@player.steps}</div>#{end_div}"
-    outer_wrapper + wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div + end_div
+    wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div
   end
 
   def calculate_score

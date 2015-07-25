@@ -1,16 +1,29 @@
 $(document).ready(function() {
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-
+  $('#leave_message').bind('click', event, leaveMessage);
   $(window).bind('keydown', event, move);
-
   function insertTiles(message){
-    // console.log("hello", message);
-    // document.getElementsByTagName("body")[0].appendChild(message);
-    $('.outer_game_wrapper').remove();
-    $('body').append(message);
-    $('.tile_row')[1].children[1].className += " player"
+    $('.outer_game_wrapper').empty();
+    $('.outer_game_wrapper').append(message);
+    $('.tile_row')[1].children[1].className += " player";
+  }
+  function ajax(data, route, callBack)
+  {
+    var request = $.ajax({
+      url: route,
+      method: "POST",
+      data: data,
+      dataType: "text",
+      success: callBack
+    });
+  }
 
+  function leaveMessage(e)
+  {
+    var message = $('#message_text').text();
+    data = "message=" + message;
+    ajax(data, '/game/leave_message');
+    $('#message_text').text('z');
   }
 
   function move(e)
@@ -19,33 +32,17 @@ $(document).ready(function() {
         right = 39,
         up = 38,
         down = 40;
-
-    function ajax(dir)
-    {
-      console.log(dir);
-      var request = $.ajax({
-        url: "/game/move",
-        method: "POST",
-        data: "dir=" + dir,
-        dataType: "text",
-        success: insertTiles
-      });
-       
-    }
     if(e.keyCode == left){
-      ajax('left');
+      ajax('dir=left', '/game/move', insertTiles);
     }else
     if(e.keyCode == right){
-      ajax('right');
+      ajax('dir=right', '/game/move', insertTiles);
     }else
     if(e.keyCode == up){
-      ajax('up');
+      ajax('dir=up', '/game/move', insertTiles);
     }else
     if(e.keyCode == down){
-      ajax('down');
+      ajax('dir=down', '/game/move', insertTiles);
     }
-
-
-    // console.log(event);
   }
 });
