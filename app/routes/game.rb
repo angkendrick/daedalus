@@ -101,7 +101,9 @@ post '/game/move' do
     score: @score
     )
   @current_save.save
-  binding.pry
+  if @game.finished
+    # save to highscore table
+  end
   puts "position: #{@player.position} level: #{@player.current_level}"
   erb :tiles, :layout => false
 end

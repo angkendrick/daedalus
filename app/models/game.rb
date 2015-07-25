@@ -133,10 +133,10 @@ class Game
     outer_wrapper + wrapper_start + tiles + end_div + inventory_wrap_start + keys + gems + coins + steps + end_div + end_div
   end
 
-    def calculate_score
-      total = 0
-      total = (((@player.current_level + 1) * 100) + (@player.coins * 10) + (@player.gems * 50) - @player.steps)
-    end
+  def calculate_score
+    total = 0
+    total = (((@player.current_level + 1) * 100) + (@player.coins * 10) + (@player.gems * 50) - @player.steps)
+  end
 
   private
   def default_div(class_var)
@@ -144,8 +144,8 @@ class Game
   end
 
   def finish_maze
-    self.finished = true
-    "<div id='end_screen'>You have crawled out of Daedalus Maze into freedom. Your final score is calculate_score</div>"
+    @finished = true
+    "<div id='end_screen'>You have crawled out of Daedalus Maze into freedom. Your final score is #{calculate_score}</div>"
   end
 
 end
