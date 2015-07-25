@@ -5,6 +5,12 @@ get '/game/' do
   erb :'game/index'
 end
 
+get '/game/highscore' do
+  #binding.pry
+  @highscore = Highscore.all.order(highscore: :desc).limit(10)
+  erb :'game/highscore'
+end
+
 post '/game/new' do
   # the map is stored in the database as :map
   # the level of that map is stored as :level
@@ -90,6 +96,7 @@ post '/game/move' do
   @score = @game.calculate_score
   #binding.pry
   puts "position: #{@player.position} level: #{@player.current_level}"
+  @score = [@score, @current_save.score].max #always get the highest score
   @current_save.update(
     player_position: @player.position.to_s, 
     map: Level.stringify(@game.level.level),
@@ -101,8 +108,9 @@ post '/game/move' do
     score: @score
     )
   @current_save.save
+  #binding.pry
   if @game.finished
-    # save to highscore table
+    Highscore.create(player_id: @player.id, name: @player.name, highscore: @current_save.score)
   end
   puts "position: #{@player.position} level: #{@player.current_level}"
   erb :tiles, :layout => false
