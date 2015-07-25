@@ -1,0 +1,16 @@
+<% if @highscore %>
+
+<table>
+<tr>
+  <th>Name</th>
+  <th>Score</th>
+</tr>
+  <% @highscore.each do |row| %>
+    <tr>
+      <td><%= row.name %></td>
+      <td><%= row.highscore %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% end %>

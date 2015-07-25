@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724194620) do
+ActiveRecord::Schema.define(version: 20150725002339) do
+
+  create_table "highscores", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "name"
+    t.integer  "highscore"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "maps", force: :cascade do |t|
     t.string  "level"
