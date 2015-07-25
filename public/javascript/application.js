@@ -1,11 +1,15 @@
 $(document).ready(function() {
-
+  var timeStart = 0;
+  var timeEnd = 0
   $('#leave_message').bind('click', event, leaveMessage);
   $(window).bind('keydown', event, move);
   function insertTiles(message){
+    timeEnd = Date.now();
+    console.log('total time to move', timeEnd - timeStart);
     $('.outer_game_wrapper').empty();
     $('.outer_game_wrapper').append(message);
     $('.tile_row')[1].children[1].className += " player";
+
   }
   function ajax(data, route, callBack)
   {
@@ -28,6 +32,7 @@ $(document).ready(function() {
 
   function move(e)
   {
+    timeStart = Date.now();
     var left = 37,
         right = 39,
         up = 38,

@@ -64,6 +64,7 @@ post '/game/load' do
 end
 
 post '/game/move' do
+  time_start = Time.now
   @dir = params[:dir] || "no direction"
   puts @dir
   
@@ -91,6 +92,7 @@ post '/game/move' do
   elsif @dir == 'down'
     @tiles = @game.move_player(0, 1)
   end
+  # @tiles = ""
   # player stats
   @score = @game.calculate_score
   #binding.pry
@@ -110,7 +112,10 @@ post '/game/move' do
   if @game.finished
     Highscore.create(player_id: @player.id, name: @player.name, highscore: @current_save.score)
   end
+  time_end = Time.now
+  puts "operation time: #{time_end - time_start}"
   erb :tiles, :layout => false
+  
 end
 
 post '/game/leave_message' do
