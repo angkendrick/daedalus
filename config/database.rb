@@ -5,17 +5,17 @@ configure do
   end
 
   set :database, {
-    # adapter: "sqlite3",
-    # database: "db/db.sqlite3"
-    adapter: "postgresql",
-    database: "dfsofepbaf97gv",
-    username: "smedpfnjsymgdd",
-    password: "bx4jbrw68K-IZhHlMi9KgvdalD",
-    host: "ec2-54-197-238-19.compute-1.amazonaws.com",
-    port: 5432,
-    pool: 5,
-    encoding: "unicode",
-    min_messages: "error"
+    adapter: "sqlite3",
+    database: "db/db.sqlite3"
+    # adapter: "postgresql",
+    # database: "dfsofepbaf97gv",
+    # username: "smedpfnjsymgdd",
+    # password: "bx4jbrw68K-IZhHlMi9KgvdalD",
+    # host: "ec2-54-197-238-19.compute-1.amazonaws.com",
+    # port: 5432,
+    # pool: 5,
+    # encoding: "unicode",
+    # min_messages: "error"
 
   }
 
