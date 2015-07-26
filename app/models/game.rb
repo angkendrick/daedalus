@@ -147,7 +147,9 @@ class Game
     message = Message.get_message_at({ x: x, y: y }, @player.current_level)
     other_player = SaveState.find_by(["player_id != ? and player_position = ? and current_level = ? and updated_at > ?", @player.id, {x: x, y: y}.to_s, @player.current_level, Time.now - 40])
     other_player_name = Player.find_by(id: other_player.player_id).name if other_player
-    "<div class='#{class_var} #{'message' if message} #{'player' if other_player} inline'>#{other_player_name if other_player}</div>"
+    span_start = "<span class='other_player_name'>"
+    span_end = "</span>"
+    "<div class='#{class_var} #{'message' if message} inline' data-other_player='#{'player' if other_player}'>#{span_start + other_player_name + span_end if other_player}</div>"
   end
 
   def finish_maze

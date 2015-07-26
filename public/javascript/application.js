@@ -10,6 +10,7 @@ $(document).ready(function() {
     $('.outer_game_wrapper').empty();
     $('.outer_game_wrapper').append(message);
     $('.tile_row')[1].children[1].className += " player";
+    $('*[data-other_player="player"]').prepend("<img class='player_overlay' src='/images/player.gif' />");
 
   }
   function ajax(data, route, callBack)
