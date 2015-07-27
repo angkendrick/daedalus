@@ -76,10 +76,9 @@ class Game
       when 'K'
         @player.pick_up_key
         return true
+      when 'C'
+        return true
       when 'E'
-        # check if there is a new level
-        
-      
         true
       when nil
         return false
@@ -109,7 +108,11 @@ class Game
         when 'K'
           tiles += default_div('key', count % 3, count_y )
         when 'C'
-          tiles += default_div('player', count % 3, count_y )
+          if @player.position == @level.find_start_position
+            tiles += default_div('player', count % 3, count_y )
+          else
+            tiles += default_div('walkable', count % 3, count_y )
+          end
         when 'E'
           tiles += default_div('exit', count % 3, count_y )
         else

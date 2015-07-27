@@ -46,7 +46,7 @@ post '/game/new' do
     )
   @player.update_position(@level.find_start_position)
   @current_save.update(player_position: @player.position.to_s) # saves player start position
-  @game = Game.new(@player, @level.level)
+  @game = Game.new(@player, @level)
   @tiles = @game.tiles_to_html(@level.get_adjacent_tiles(@player.position[:x],@player.position[:y]))
   erb :'/game/index'
 end

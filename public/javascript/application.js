@@ -56,4 +56,8 @@ $(document).ready(function() {
       ajax('dir=', '/game/move', insertTiles);
     }
   }
+  var theme = new Audio();
+  theme.src = "/audio/canibal order.mp3";
+  theme.loop = true;
+  theme.play();
 });
